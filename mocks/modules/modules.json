@@ -1,37 +1,36 @@
 {
-"cours": {
-			"titre": "Cours WCS",
-			"url": "https://wildcodeschoolparis.github.io/cours/",
-			"color": "grey",
-			"position": 1
-		 },
+	"cours": {
+		"titre": "Cours WCS",
+		"url": "https://wildcodeschoolparis.github.io/cours/",
+		"color": "grey",
+		"position": 1
+	},
 
-"dojos":{
-			"titre": "Dojos WCS",
-			"url": "https://wildcodeschoolparis.github.io/dojos/",
-			"color": "grey",
-			"position": 2
-		},
+	"dojos":{
+		"titre": "Dojos WCS",
+		"url": "https://wildcodeschoolparis.github.io/dojos/",
+		"color": "grey",
+		"position": 2
+	},
 
+	"liveCodings":{
+		"titre": "LiveCodings WCS",
+		"url": "https://wildcodeschoolparis.github.io/livecodings/",
+		"color": "grey",
+		"position": 3
+	},
 
-"liveCodings":{
-			"titre": "LiveCodings WCS",
-			"url": "https://wildcodeschoolparis.github.io/livecodings/",
-			"color": "grey",
-			"position": 3
-		},
+	"exercices":{
+		"titre": "Exercices WCS",
+		"url": "https://wildcodeschoolparis.github.io/exercices/",
+		"color": "grey",
+		"position": 4
+	},
 
-"exercices":{
-			"titre": "Exercices WCS",
-			"url": "https://wildcodeschoolparis.github.io/exercices/",
-			"color": "grey",
-			"position": 4
-		},
-
-"projects":{
-			"titre": "Projects WCS",
-			"url": "https://wildcodeschoolparis.github.io/projects/",
-			"color": "grey",
-			"position": 5
-		}
+	"projects":{
+		"titre": "Projects WCS",
+		"url": "https://wildcodeschoolparis.github.io/projects/",
+		"color": "grey",
+		"position": 5
+	}
 }

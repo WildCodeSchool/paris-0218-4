@@ -1,18 +1,21 @@
-import { pouet } from "./components/displayModule.js"
+//import { createModule } from './components/displayModule.js'
 
-fetch('http://localhost:3030/users')
-  .then(response => response.json())
-  .then(modules => {
-    const divModule = document.getElementById("moduleHtml")
-    divModule.innerHTML=modules.map(pouet).join("")
-  })
+fetch('http://localhost:3030/modules')
+.then(response => response.json())
+.then(modules => {
 
-// fetch
-// asynchrone vs synchrone
-// 
+  const divModule = document.getElementById("moduleHtml")
 
-// // npm install express
-// const express = require('express')
-// const app = express()
-// app.get('/', () => { ... })
-// app.listen(4000, () => console.log('server listenning'))
+  const tab_key = Object.keys(modules)
+  for (let i = 0 ; i < tab_key.length ; i++) {
+
+    divModule.innerHTML += `
+    <a class="link_module" href="${modules[tab_key[i]].url}">
+    <div class="mov_module">
+    <p>${modules[tab_key[i]].titre}</p>
+    <p>LOGO</p>
+    </div>
+    </a>
+    `
+  }
+})

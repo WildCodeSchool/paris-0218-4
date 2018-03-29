@@ -1,11 +1,9 @@
 
-export const createModule = (data, catkey) =>  `
-  <div class="aloha"> 
-    <p> ${data.catkey.titre}</p>
-    <p> ${data.catkey.url}</p>
-    <p> ${data.catkey.color}</p>
-    <p> ${data.catkey.position}</p>
-  </div> 
-  `
-
-  export const pouet = modules => console.log(modules.lenght)
+export const createModule = (modules) =>  `
+<div class="aloha">
+<p> ${modules.catkey.titre}</p>
+<p> ${modules.catkey.url}</p>
+<p> ${modules.catkey.color}</p>
+<p> ${modules.catkey.position}</p>
+</div>
+`
