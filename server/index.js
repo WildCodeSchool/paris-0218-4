@@ -2,7 +2,7 @@ const express = require('express')
 
 const port = 3030
 
-const modules = require('../mocks/modules/modules.json')
+const blocks = require('../mocks/blocks/blocks.json')
 
 const app = express()
 
@@ -16,8 +16,8 @@ app.get('/', (request, response) => {
   response.send('OK')
 })
 
-app.get('/modules', (request, response) =>{
-  response.json(modules)
+app.get('/blocks', (request, response) =>{
+  response.json(blocks)
 })
 
 app.listen(port, () => console.log(`server listenning to port ${port}`))

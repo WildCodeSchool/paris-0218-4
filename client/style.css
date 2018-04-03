@@ -1,28 +1,24 @@
-#moduleHtml {
+#blocks {
   margin-left: auto;
   margin-right: auto;
 }
 
-.mov_module {
-  width: 25%;
-  height: 17vw;
-  float: left;
-  border: 1px solid silver;
-  padding: 20px;
-  margin: 2px;
+.block {
+  height: 12vw;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: silver;
+  display: block;
+}
+
+.block:hover {
+  opacity: 0.6;
+}
+
+.block-content {
   color: black;
   font-weight: bold;
-  background-color: silver;
-  border-radius: 2px;
-  text-align: center;
-  display: block;
-}
-
-.link_module {
-  display: block;
-}
-
-.link_module:hover > div {
-  background-color: black;
-  color: white;
 }
