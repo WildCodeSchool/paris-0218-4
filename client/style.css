@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
   padding: 0;
 }
@@ -19,6 +19,77 @@ body {
 }
 
 .block-content {
+  padding-top: 55px;
   color: black;
   font-weight: bold;
+  font-family: 'IBM Plex Mono', monospace;
+ 
+}
+
+.header{
+  width: 100%;
+  background-color: #292F2B;
+  margin: 0;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  position: fixed;
+  height: 65px;
+  top: 0px;
+  z-index: 10;
+}
+
+h1{
+  text-align:center;
+  padding: 15px;
+}
+
+#blocks {
+  display: inline-block;
+}
+
+.blocks-section{
+  width: 75vw;
+  margin-top: 65px;
+}
+
+p.username{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 20px;
+}
+
+p.current{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 0.75rem;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-weight: 200;
+}
+
+.flux{
+  width: 25vw;
+  position: fixed;
+  right: 0;
+  z-index: 15;
+  top: 65px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8)
+}
+
+.flux-rss{
+  background-color: white;
+  height: 100vh;
+}
+
+.personal {
+  background-color: yellow;
+}
+
+.plus{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 5rem;
+  font-weight: 200;
+  text-align: center;
+  background-color: lightgrey;
 }
