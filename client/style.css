@@ -45,6 +45,7 @@ h1 {
 }
 
 .block {
+  width: 25vw;
   height: 25vw;
   margin: 0;
   padding: 0;
@@ -52,7 +53,6 @@ h1 {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  width: 25vw;
 }
 
 .block:hover {
@@ -60,18 +60,18 @@ h1 {
 }
 
 .block-icon {
-  margin-top: 30%;
+  margin-top: 31%;
 }
 
 .icon {
-  width: 75px;
+  width: 65px;
 }
 
 .block-title {
-  padding-top: 10%;
-  color: black;
+  padding-top: 9%;
+  color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   letter-spacing: 1px;
 }
 
@@ -113,10 +113,33 @@ p.edit-admin {
   height: 100vh;
 }
 
+
+/* ADD NEW MODULE */
+
+.block-plus {
+  background-color: #F7F7F7;
+  cursor: pointer;
+  text-align: center;
+}
+
 .plus {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 5rem;
-  font-weight: 200;
-  text-align: center;
-  background-color: lightgrey;
+  font-size: 4.5rem;
+  font-weight: 100;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background-color: yellow;
+  line-height: 54px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  margin-top: 31%;
+  display: inline-block;
+}
+
+.add-new-module {
+  padding-top: 9%;
+  color: #292F2B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
 }
