@@ -60,11 +60,15 @@ h1 {
 }
 
 .block-icon {
-  margin-top: 35%;
+  margin-top: 30%;
+}
+
+.icon {
+  width: 75px;
 }
 
 .block-title {
-  padding-top: 60px;
+  padding-top: 10%;
   color: black;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.2rem;
