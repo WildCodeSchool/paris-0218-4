@@ -42,6 +42,8 @@ h1 {
 .blocks-section {
   width: 75vw;
   margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .block {
@@ -52,11 +54,12 @@ h1 {
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  transition: 0.4s ease-in;
 }
 
 .block:hover {
-  opacity: 0.6;
+  filter: invert(100%);
+  transition: 0.4s ease-out;
 }
 
 .block-icon {

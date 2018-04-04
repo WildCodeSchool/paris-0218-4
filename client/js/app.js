@@ -9,5 +9,5 @@ fetch('http://localhost:3030/blocks')
     blocks.sort((block1, block2) =>  block1.position - block2.position );
 
 
-    blocksContainer.innerHTML = blocks.map(createBlockElement).join('')
+    blocksContainer.innerHTML = blocks.map(createBlockElement).join('') + blocksContainer.innerHTML
 })
