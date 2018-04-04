@@ -18,12 +18,16 @@
   opacity: 0.6;
 }
 
-.block-content {
+.block-title {
   padding-top: 55px;
   color: black;
-  font-weight: bold;
   font-family: 'IBM Plex Mono', monospace;
- 
+}
+
+.block-icon {
+  margin-top: 35%;
+  color: black;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .header{
