@@ -3,35 +3,35 @@
 		"id": 1,
 		"title": "Cours WCS",
 		"url": "https://wildcodeschoolparis.github.io/cours/",
-		"color": "cyan",
+		"color": "#342a66",
 		"position": 1
 	},
 	{
 		"id": 2,
 		"title": "Dojos WCS",
 		"url": "https://wildcodeschoolparis.github.io/dojos/",
-		"color": "orange",
+		"color": "#f3f3f3",
 		"position": 2
 	},
 	{
 		"id": 3,
 		"title": "LiveCodings WCS",
 		"url": "https://wildcodeschoolparis.github.io/livecodings/",
-		"color": "green",
+		"color": "#ffff57",
 		"position": 4
 	},
 	{
 		"id": 4,
 		"title": "Groups",
 		"url": "https://wildcodeschoolparis.github.io/groups/",
-		"color": "purple",
+		"color": "#292f2b",
 		"position": 5
 	},
 	{
 		"id": 5,
 		"title": "Projects WCS",
 		"url": "https://wildcodeschoolparis.github.io/projects/",
-		"color": "hotpink",
+		"color": "#ffffe6",
 		"position": 3
 	}
 ]

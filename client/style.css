@@ -1,17 +1,17 @@
-#blocks {
-  margin-left: auto;
-  margin-right: auto;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .block {
-  height: 12vw;
-  padding: 10px;
-  margin: 5px;
+  height: 25vw;
+  margin: 0;
+  padding: 0;
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
-  background-color: silver;
-  display: block;
+  display: inline-block;
+  width: 25vw;
 }
 
 .block:hover {
