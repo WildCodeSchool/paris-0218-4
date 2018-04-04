@@ -63,7 +63,8 @@ h1 {
 }
 
 .block-icon {
-  margin-top: 31%;
+  padding-top: 11%;
+  margin-top: 10%;
 }
 
 .icon {
@@ -72,6 +73,7 @@ h1 {
 
 .block-title {
   padding-top: 9%;
+  padding-bottom: 30%;
   color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.15rem;
@@ -123,6 +125,33 @@ p.edit-admin {
   background-color: #F7F7F7;
   cursor: pointer;
   text-align: center;
+/* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;*/
+}
+
+.edit-delete {
+  color: #292F2B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+.edit-button {
+  width: 50%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.delete-button {
+  width: 50%;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .plus {
@@ -135,14 +164,21 @@ p.edit-admin {
   background-color: yellow;
   line-height: 54px;
   box-shadow: 0 0 30px rgba(0,0,0,0.1);
-  margin-top: 31%;
   display: inline-block;
+  margin-top: 35%;
+  color: #292F2B;
+}
+
+.blocks-section a {
+  text-decoration: none;
 }
 
 .add-new-module {
-  padding-top: 9%;
   color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 1px;
+  width: 100%;
+  margin-top: 11%;
 }
+
