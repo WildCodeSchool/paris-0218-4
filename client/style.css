@@ -1,6 +1,47 @@
+/* GENERAL */
+
 * {
   margin: 0;
   padding: 0;
+}
+
+p.current {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 200;
+  padding: 40px;
+}
+
+
+/* HEADER */
+
+.header {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #292F2B;
+  color: white;
+  z-index: 2;
+}
+
+h1 {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  text-align:center;
+  padding: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 1.75rem;
+}
+
+
+/* BLOCKS */
+
+.blocks-section {
+  width: 75vw;
+  margin-top: 60px;
 }
 
 .block {
@@ -18,79 +59,57 @@
   opacity: 0.6;
 }
 
-.block-title {
-  padding-top: 55px;
-  color: black;
-  font-family: 'IBM Plex Mono', monospace;
-}
-
 .block-icon {
   margin-top: 35%;
+}
+
+.block-title {
+  padding-top: 60px;
   color: black;
   font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
-.header{
-  width: 100%;
-  background-color: #292F2B;
-  margin: 0;
-  color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-  position: fixed;
-  height: 65px;
-  top: 0px;
-  z-index: 10;
-}
 
-h1{
-  text-align:center;
-  padding: 15px;
-}
+/* SECTION PERSONAL + FLUX */
 
-#blocks {
-  display: inline-block;
-}
-
-.blocks-section{
-  width: 75vw;
-  margin-top: 65px;
-}
-
-p.username{
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 1rem;
-  text-align: center;
-  padding-top: 20px;
-}
-
-p.current{
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 0.75rem;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 20px;
-  font-weight: 200;
-}
-
-.flux{
+.section-flux {
   width: 25vw;
   position: fixed;
   right: 0;
-  z-index: 15;
-  top: 65px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.8)
+  z-index: 1;
+  top: 60px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.3)
 }
 
-.flux-rss{
-  background-color: white;
-  height: 100vh;
-}
+/* PERSONAL DETAILS */
 
 .personal {
   background-color: yellow;
 }
 
-.plus{
+p.username {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+p.edit-admin {
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+
+/* FLUX RSS */
+
+.flux-rss {
+  background-color: white;
+  height: 100vh;
+}
+
+.plus {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: 5rem;
   font-weight: 200;
