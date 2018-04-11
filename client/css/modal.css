@@ -56,15 +56,6 @@
 .chooseColor:hover {
   border: 2px solid red;
 }
-/* The Close Button of form */
-.button-cancel {
-  background-color: black !important;
-  border: black !important;
-}
-.button-cancel:hover {
-  background-color: #5A5A5A !important;
-  border: #5A5A5A !important;
-}
 /* CANCEL and SUBMIT */
 #endForm {
   text-align: center;
