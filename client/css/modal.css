@@ -1,6 +1,6 @@
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -19,7 +19,44 @@
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
 }
-/* The Close Button */
+/* INPUTS FORM _ TITRE AND URL */
+.modal-content input {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid silver;
+}
+/* TITLE  */
+.modal-title {
+  padding: 10px;
+  text-align: center;
+}
+/* BLOCKS SELECTS */
+.select {
+  margin-top: 10px;
+}
+/* BUTTON _ ICON and COULEUR */
+.btn-select {
+  background-color: transparent;
+  padding: 10px 15px;
+  border: none;
+  color: black;
+}
+.btn-select:hover, .btn-select:focus {
+  background-color: transparent;
+  border: none;
+  color: silver;
+}
+/* CHOOSE COLOR */
+.chooseColor {
+  border: 1px solid silver;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50px;
+}
+.chooseColor:hover {
+  border: 2px solid red;
+}
+/* The Close Button of form */
 .button-cancel {
   background-color: black !important;
   border: black !important;
@@ -27,4 +64,20 @@
 .button-cancel:hover {
   background-color: #5A5A5A !important;
   border: #5A5A5A !important;
+}
+/* CANCEL and SUBMIT */
+#endForm {
+  text-align: center;
+  margin-top: 40px;
+}
+#endForm input {
+  margin: 10px;
+}
+#endForm .button-cancel {
+  background-color: transparent !important;
+  border: 1px solid black !important;
+  color: black;
+}
+#endForm .btn-submit {
+  background-color: black !important;
 }
