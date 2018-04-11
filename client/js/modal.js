@@ -19,7 +19,7 @@ const displayModal = () => {
   }
   else {
     // on pc
-    modalContent.style.marginTop = '15%'
+    modalContent.style.marginTop = '5%'
     modalContent.style.width = '400px'
   }
 }
