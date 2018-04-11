@@ -1,37 +1,47 @@
 [
 	{
 		"id": 1,
-		"title": "Cours WCS",
+		"title": "Cours",
+		"icon": "img/icon-cours-blanc.png",
 		"url": "https://wildcodeschoolparis.github.io/cours/",
-		"color": "cyan",
+		"color": "#342a66",
+		"titleColor": "white",
 		"position": 1
 	},
 	{
 		"id": 2,
-		"title": "Dojos WCS",
+		"title": "Dojos",
+		"icon": "img/icon-cours.png",
 		"url": "https://wildcodeschoolparis.github.io/dojos/",
-		"color": "orange",
+		"color": "#f3f3f3",
+		"titleColor": "#292e2a",
 		"position": 2
 	},
 	{
 		"id": 3,
-		"title": "LiveCodings WCS",
+		"title": "Live Codings",
+		"icon": "img/icon-cours.png",
 		"url": "https://wildcodeschoolparis.github.io/livecodings/",
-		"color": "green",
+		"color": "#ffff57",
+		"titleColor": "#292e2a",
 		"position": 4
 	},
 	{
 		"id": 4,
 		"title": "Groups",
+		"icon": "img/icon-cours-blanc.png",
 		"url": "https://wildcodeschoolparis.github.io/groups/",
-		"color": "purple",
+		"color": "#343936",
+		"titleColor": "white",
 		"position": 5
 	},
 	{
 		"id": 5,
-		"title": "Projects WCS",
+		"title": "Projects",
+		"icon": "img/icon-cours.png",
 		"url": "https://wildcodeschoolparis.github.io/projects/",
-		"color": "hotpink",
+		"color": "#ffffe6",
+		"titleColor": "#292e2a",
 		"position": 3
 	}
 ]
