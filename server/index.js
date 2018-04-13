@@ -11,13 +11,10 @@ app.use((request, response, next) => {
   response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next()
 })
-
 app.get('/', (request, response) => {
   response.send('OK')
 })
-
 app.get('/blocks', (request, response) =>{
   response.json(blocks)
 })
-
 app.listen(port, () => console.log(`server listenning to port ${port}`))
