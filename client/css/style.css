@@ -5,10 +5,14 @@
 }
 p.current {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   text-align: center;
   font-weight: 200;
   padding: 40px;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 /* HEADER */
@@ -25,10 +29,10 @@ p.current {
 h1 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   text-align:center;
-  padding: 10px;
+  padding: 12px;
   font-weight: 400;
   letter-spacing: 1px;
-  font-size: 1.75rem;
+  font-size: 2.8rem;
 }
 
 /* BLOCKS */
@@ -54,17 +58,17 @@ h1 {
 }
 .block-icon {
   padding-top: 11%;
-  margin-top: 10%;
+  margin-top: 11%;
 }
 .icon {
   width: 65px;
 }
 .block-title {
   padding-top: 9%;
-  padding-bottom: 30%;
+  padding-bottom: 15%;
   color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.15rem;
+  font-size: 1.6rem;
   letter-spacing: 1px;
 }
 
@@ -84,7 +88,7 @@ h1 {
 }
 p.username {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
   padding-top: 30px;
 }
@@ -97,6 +101,7 @@ p.edit-admin {
 .flux-rss {
   background-color: white;
   height: 100vh;
+  text-align: left;
 }
 
 /* ADD NEW MODULE */
@@ -108,7 +113,7 @@ p.edit-admin {
 .edit-delete {
   color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   display: flex;
   flex-wrap: nowrap;
@@ -146,10 +151,10 @@ p.edit-admin {
 .add-new-module {
   color: #292F2B;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   letter-spacing: 1px;
   width: 100%;
-  margin-top: 11%;
+  margin-top: 13%;
 }
 
 /* MEDIA QUERIES */
@@ -209,7 +214,7 @@ p.edit-admin {
   .plus {
     align-self: center;
     padding: 0 !important;
-    margin-top: 0 !important;
+    margin-top: 15% !important;
   }
   .add-new-module {
     margin-top: 5% !important;
