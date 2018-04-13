@@ -1,9 +1,8 @@
-const modal = document.getElementById('myModal')
+const modal = document.getElementById('modalForm')
 
-const displayModal = () => {
+export const displayModal = () => {
   const user_agent =/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   const modalContent = document.getElementById('modal-content')
-  modal.style.display = "block"
 
   // portrait
   if (user_agent && (window.innerHeight > window.innerWidth) && (modal.style.display === "block")) {
@@ -22,6 +21,8 @@ const displayModal = () => {
     modalContent.style.marginTop = '5%'
     modalContent.style.width = '400px'
   }
+
+  modal.style.display = 'block'
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -35,10 +36,6 @@ window.onclick = (event) => {
   }
 }
 
-// When the user clicks on the button, open the modal
-document.getElementById("open_form").onclick = () => {
-  displayModal()
-}
 // IF MOBILE RESIZE portrait/paysage
 window.addEventListener("resize", () => {
   displayModal()

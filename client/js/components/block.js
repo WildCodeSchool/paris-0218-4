@@ -1,8 +1,8 @@
-export const createBlockElement = block =>
-	`<div class="block" style="background-color:${block.color}">
+export const createBlockElement = block => `
+	<div class="block" style="background-color:${block.color}">
 		<div class="edit-delete">
 			<p class="edit-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Edit</a></p>
-			<span class="separator" style="color:${block.titleColor}; text-decoration:none">|</span> 
+			<span class="separator" style="color:${block.titleColor}; text-decoration:none">|</span>
 			<p class="delete-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Delete</a></p>
 		</div>
 
@@ -16,4 +16,12 @@ export const createBlockElement = block =>
 				<p style="color: ${block.titleColor}">${block.title}</p>
 			</div>
 		</a>
-	</div>`
+	</div>
+`
+
+export const createPlusBlockElement = () => `
+  <div id="block-plus" class="block">
+    <p class="plus">+</p>
+    <p class="add-new-module">Add a new module</p>
+  </div>
+`
