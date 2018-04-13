@@ -1,6 +1,10 @@
 const modal = document.getElementById('modalForm')
 
 export const displayModal = () => {
+  modal.style.display = 'block'
+}
+
+const updateModal = () => {
   const user_agent =/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   const modalContent = document.getElementById('modal-content')
 
@@ -21,8 +25,6 @@ export const displayModal = () => {
     modalContent.style.marginTop = '5%'
     modalContent.style.width = '400px'
   }
-
-  modal.style.display = 'block'
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -37,6 +39,4 @@ window.onclick = (event) => {
 }
 
 // IF MOBILE RESIZE portrait/paysage
-window.addEventListener("resize", () => {
-  displayModal()
-}, false)
+window.addEventListener("resize", updateModal)
