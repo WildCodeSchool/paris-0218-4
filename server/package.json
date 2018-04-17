@@ -1,23 +1,16 @@
 {
-  "name": "pojetwildsource",
+  "name": "server",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "package-lock.json": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WildCodeSchool/paris-0218-wild-source.git"
-  },
-  "bugs": {
-    "url": "https://github.com/WildCodeSchool/paris-0218-wild-source/issues"
-  },
-  "homepage": "https://github.com/WildCodeSchool/paris-0218-wild-source#readme",
-  "description": ""
+  "license": "MIT"
 }
