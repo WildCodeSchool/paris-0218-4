@@ -58,19 +58,19 @@
 	</div>
 
 	<!-- The Modal -->
-	<div id="modalForm" class="modal">
-		<form id="addBlock">
+	<div id="new-module-form-container" class="modal">
+		<form id="new-module-form">
 
 			<fieldset id="modal-content" class="modal-content">
 				<div id="modalTitle" class="modal-title">
 					<h4>New module</h4>
 				</div>
-				<input id="title" name="title" type="text" placeholder="Title of the module" minlength="3" maxlength="25" required>
-				<input id="url" name="url" type="url" placeholder="http://url-of-the-module.com" minlength="10" maxlength="200" required>
+				<input id="new-module-form-title" name="title" type="text" placeholder="Title of the module" minlength="3" maxlength="25" required>
+				<input id="new-module-form-url" name="url" type="url" placeholder="http://url-of-the-module.com" minlength="10" maxlength="200" required>
 
 				<div class="select">
-					<label for="selectIcon">Select Icon :</label>
-					<input id="selectIcon" type="hidden" name="icon" required>
+					<label for="new-module-form-icon">Select Icon :</label>
+					<input id="new-module-form-icon" type="hidden" name="icon" required>
 					<button class="btn-select-icon" type="button" name="cours">
 						<img class="icon-choice" src="./img/icon-cours.png">
 					</button>
@@ -89,8 +89,8 @@
 				</div>
 
 				<div class="select">
-					<label for="selectColor">Select Color :</label>
-					<input id="selectColor" type="hidden" name="color" required>
+					<label for="new-module-form-color">Select Color :</label>
+					<input id="new-module-form-color" type="hidden" name="color" required>
 					<button class="btn-select-color" type="button" name="342A66-w">
 						<p class="chooseColor" style="background-color:#342A66"></p>
 					</button>
@@ -109,8 +109,8 @@
 				</div>
 
 				<div id="endForm" class="">
-					<input id="close_modal" class="button-cancel" type="reset" value="Cancel">
-					<input id="btnSubmit" class="btn-submit" type="submit" value="Submit" disabled>
+					<input id="new-module-form-cancel-button" class="button-cancel" type="reset" value="Cancel">
+					<input id="new-module-form-submit-button" class="btn-submit" type="submit" value="Submit" disabled>
 				</div>
 			</fieldset>
 		</form>

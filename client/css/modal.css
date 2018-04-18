@@ -37,7 +37,7 @@ label, legend {
   border-bottom: 1px solid silver;
 }
 .modal-content input:focus {
-  border-color: black; 
+  border-color: black;
 }
 
 ::placeholder {
@@ -122,7 +122,8 @@ h4 {
   color: black;
   margin-right: 10px;
 }
+
 #endForm .btn-submit {
-  background-color: #292F2B !important;
+  background-color: #292F2B;
   margin-left: 10px;
 }
