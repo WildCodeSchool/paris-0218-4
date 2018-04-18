@@ -58,12 +58,27 @@ app.post('/blocks', (request, response, next) => {
   const filepath = '../mocks/blocks/blocks.json'
 
   const content = {
-    title: request.body.title,
-    url: request.body.url
   }
 
-  writeFile(filepath, JSON.stringify(content), 'utf8')
-    .then(() => response.json('OK'))
-    .catch(next)
+  readFile(filepath, 'utf8')
+  	.then(JSON.parse)
+  	.then(blocks => {
+  		blocks.push({
+  			id: blocks.length + 1,
+  			title: request.body.title,
+    		url: request.body.url,
+    		icon: "img/icon-dojos.png",
+   			color: "#f3f3f3",
+    		titleColor: "#292e2a",
+    		position: blocks.length + 1
+  		})
+  		
+  		const content = JSON.stringify(blocks, null, 2)
+  		return writeFile(filePath, content, 'utf8')
+  	})
+  	.then(() => response.end('OK'))
+  	.catch(next)
+  // writeFile(filepath, JSON.stringify(content), 'utf8')
+  //   .then(() => response.json('OK'))
+  //   .catch(next)
 })
-

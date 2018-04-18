@@ -38,4 +38,3 @@ document.getElementById('addBlock').addEventListener('submit', event => {
     })
   }).then(res => console.log(res.status))
 })
-
