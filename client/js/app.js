@@ -1,14 +1,19 @@
 import { createBlockElement, createPlusBlockElement } from './components/block.js'
 import { displayModal, hideModal } from './modal.js'
 
+const qs = new URLSearchParams(window.location.search)
+document.isAdmin = qs.get('admin') === 'true'
+
 const blocksContainer = document.getElementById('blocks')
 const formElement = document.getElementById('new-module-form')
 const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
 
 // display modal
 const setup = () => {
-  const plusBlock = document.getElementById('block-plus')
-  plusBlock.addEventListener('click', displayModal)
+  if (document.isAdmin) {
+    const plusBlock = document.getElementById('block-plus')
+    plusBlock.addEventListener('click', displayModal)
+  }
 }
 
 const render = blocks => {
@@ -16,10 +21,12 @@ const render = blocks => {
   let blockElements = blocks
     .sort((block1, block2) =>  block1.position - block2.position)
     .map(createBlockElement)
-    .concat([ plusBlockElement ])
-    .join('')
 
-  blocksContainer.innerHTML = blockElements
+  if (document.isAdmin) {
+    blockElements = blockElements.concat([ plusBlockElement ])
+  }
+
+  blocksContainer.innerHTML = blockElements.join('')
 
   setup()
 }
