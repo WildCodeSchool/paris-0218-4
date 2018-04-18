@@ -36,6 +36,9 @@ label, legend {
   border-radius: 0;
   border-bottom: 1px solid silver;
 }
+.modal-content input:focus {
+  border-color: black; 
+}
 
 ::placeholder {
   font-family: 'IBM Plex Sans Condensed', sans-serif;

@@ -61,5 +61,23 @@
     "color": "#FFFFE6",
     "titleColor": "#292e2a",
     "position": 7
+  },
+  {
+    "id": 8,
+    "title": "Test",
+    "url": "http://google.com",
+    "icon": "img/icon-dojos.png",
+    "color": "#FFFFE6",
+    "titleColor": "#292e2a",
+    "position": 8
+  },
+  {
+    "id": 9,
+    "title": "Test de reset",
+    "url": "http://google.com",
+    "icon": "img/icon-livecodings.png",
+    "color": "#F3F3F3",
+    "titleColor": "#292e2a",
+    "position": 9
   }
 ]

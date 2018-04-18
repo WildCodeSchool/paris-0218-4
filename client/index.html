@@ -65,8 +65,8 @@
 				<div id="modalTitle" class="modal-title">
 					<h4>New module</h4>
 				</div>
-				<input type="text" placeholder="Title of the module" id="title" name="title" required>
-				<input type="url" placeholder="http://url-of-the-module.com" id="url" name="url" required>
+				<input id="title" name="title" type="text" placeholder="Title of the module" minlength="3" maxlength="25" required>
+				<input id="url" name="url" type="url" placeholder="http://url-of-the-module.com" minlength="10" maxlength="200" required>
 
 				<div class="select">
 					<label for="selectIcon">Select Icon :</label>
@@ -107,7 +107,7 @@
 
 				<div id="endForm" class="">
 					<input id="close_modal" class="button-cancel" type="reset" value="Cancel">
-					<input id="btnSubmit" class="btn-submit" type="submit" value="Submit">
+					<input id="btnSubmit" class="btn-submit" type="submit" value="Submit" disabled>
 				</div>
 			</fieldset>
 		</form>

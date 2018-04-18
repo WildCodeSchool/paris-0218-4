@@ -42,6 +42,7 @@ document.getElementById('addBlock').addEventListener('submit', event => {
     icon: document.getElementById('selectIcon').value,
     color: document.getElementById('selectColor').value
   }
+  document.getElementById('addBlock').reset()
   fetch('http://localhost:3030/blocks', {
     method: 'post',
     body: JSON.stringify(body)
