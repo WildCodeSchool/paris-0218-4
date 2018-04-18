@@ -65,18 +65,23 @@ h4 {
   margin-top: 10px;
 }
 /* BUTTON _ ICON and COULEUR */
-.btn-select {
+.btn-select-icon, .btn-select-color {
   background-color: transparent;
   padding: 10px;
   border: none;
   color: black;
 }
-.btn-select:hover, .btn-select:focus {
+.btn-select-icon {
+  opacity: 0.5;
+}
+.btn-select-color:hover, .btn-select-color:focus {
   background-color: transparent;
-  border: none;
   color: silver;
 }
-
+.btn-select-icon:hover, .btn-select-icon:focus {
+  background-color: transparent;
+  opacity: 1;
+}
 .icon-choice {
   width: 35px;
   margin-bottom: 10px;

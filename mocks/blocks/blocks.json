@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -44,5 +43,23 @@
     "color": "#ffffe6",
     "titleColor": "#292e2a",
     "position": 3
+  },
+  {
+    "id": 6,
+    "title": "POKEMON",
+    "url": "http://google.com",
+    "icon": "img/icon-livecodings-blanc.png",
+    "color": "#292F2B",
+    "titleColor": "white",
+    "position": 6
+  },
+  {
+    "id": 7,
+    "title": "DIGIMON",
+    "url": "http://google.com",
+    "icon": "img/icon-groups.png",
+    "color": "#FFFFE6",
+    "titleColor": "#292e2a",
+    "position": 7
   }
 ]
