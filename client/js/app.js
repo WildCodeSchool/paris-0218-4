@@ -1,23 +1,18 @@
-import { createBlockElement, createPlusBlockElement } from './components/block.js'
-import { displayModal } from './modal.js'
+import { handleSubmit, render, formElement } from './modal-processing.js'
 
-const setup = () => {
-  const plusBlock = document.getElementById('block-plus')
-  plusBlock.addEventListener('click', displayModal)
+// simule admin behavior
+const qs = new URLSearchParams(window.location.search)
+document.isAdmin = qs.get('admin') === 'true'
+
+// fetch module on get
+const getModules = () => {
+  return fetch('http://localhost:3030/blocks')
+    .then(response => response.json())
 }
 
-fetch('http://localhost:3030/blocks')
-  .then(response => response.json())
-  .then(blocks => {
-    const blocksContainer = document.getElementById('blocks')
-    const plusBlockElement = createPlusBlockElement()
-    const blockElements = blocks
-      .sort((block1, block2) =>  block1.position - block2.position)
-      .map(createBlockElement)
-      .concat([ plusBlockElement ])
-      .join('')
-
-    blocksContainer.innerHTML = blockElements
-
-    setup()
+// after DOM load => get module
+window.addEventListener("DOMContentLoaded", () => {
+  getModules().then(render)
 })
+// when submit form
+formElement.addEventListener('submit', handleSubmit)

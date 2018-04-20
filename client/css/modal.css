@@ -36,6 +36,9 @@ label, legend {
   border-radius: 0;
   border-bottom: 1px solid silver;
 }
+.modal-content input:focus {
+  border-color: black;
+}
 
 ::placeholder {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
@@ -65,18 +68,23 @@ h4 {
   margin-top: 10px;
 }
 /* BUTTON _ ICON and COULEUR */
-.btn-select {
+.btn-select-icon, .btn-select-color {
   background-color: transparent;
   padding: 10px;
   border: none;
   color: black;
 }
-.btn-select:hover, .btn-select:focus {
+.btn-select-icon {
+  opacity: 0.5;
+}
+.btn-select-color:hover, .btn-select-color:focus {
   background-color: transparent;
-  border: none;
   color: silver;
 }
-
+.btn-select-icon:hover, .btn-select-icon:focus {
+  background-color: transparent;
+  opacity: 1;
+}
 .icon-choice {
   width: 35px;
   margin-bottom: 10px;
@@ -114,7 +122,8 @@ h4 {
   color: black;
   margin-right: 10px;
 }
+
 #endForm .btn-submit {
-  background-color: #292F2B !important;
+  background-color: #292F2B;
   margin-left: 10px;
 }
