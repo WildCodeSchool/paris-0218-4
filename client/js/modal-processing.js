@@ -2,8 +2,8 @@ import { createBlockElement, createPlusBlockElement } from './components/block.j
 import { displayModal, hideModal, setup } from './modal-display.js'
 import { evtLinkEdit } from './admin-processing.js'
 
-const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
-const formUpdateButtonElement = document.getElementById('new-module-form-update-button')
+export const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
+export const formUpdateButtonElement = document.getElementById('new-module-form-update-button')
 const blocksContainer = document.getElementById('blocks')
 export const formElement = document.getElementById('new-module-form')
 
@@ -54,7 +54,7 @@ export const handleSubmit = event => {
     color: document.getElementById('new-module-form-color').value
   }
   
-  if (formSubmitButtonElement.value === 'Update(1)') {
+  if (formUpdateButtonElement.type === 'submit') {
     console.log("j'attends une fonction update !")
     return
   }

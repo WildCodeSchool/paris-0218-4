@@ -1,4 +1,5 @@
 import { fillFormEdit } from './admin-processing.js'
+import { resetSelectIcon, resetSelectColor, formSubmitButtonElement, formUpdateButtonElement } from './modal-processing.js'
 
 const modal = document.getElementById('new-module-form-container')
 
@@ -10,10 +11,25 @@ export const setup = () => {
   }
 }
 
+export const SubmitToUpdateAndReverse = (btn1, btn2) => {
+  btn1.type = 'hidden'
+  btn2.type = 'submit'
+}
+
 export const displayModal = (data) => {
   modal.style.display = 'block'
   // form pré-remplit
-  if (data) { fillFormEdit(data) }
+  //reset opacity of button icon
+  resetSelectIcon()
+  // reset border of button color
+  resetSelectColor()
+  if (data) {
+    // change btn submit
+    SubmitToUpdateAndReverse(formSubmitButtonElement, formUpdateButtonElement)
+    fillFormEdit(data)
+    return
+  }
+  SubmitToUpdateAndReverse(formUpdateButtonElement, formSubmitButtonElement)
 }
 
 export const hideModal = () => {

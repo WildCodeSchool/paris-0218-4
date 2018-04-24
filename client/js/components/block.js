@@ -7,7 +7,7 @@ const createAdminEditionHeader = block => `
 `
 
 export const createBlockElement = block => `
-	<div class="block" style="background-color:${block.color}">
+	<div id="module-${block.id}" class="block" style="background-color:${block.color}">
 	  ${document.isAdmin ? createAdminEditionHeader(block) : ''}
     <a class="link-url" href="${block.url}" target="_blank">
       <div class="block-icon">

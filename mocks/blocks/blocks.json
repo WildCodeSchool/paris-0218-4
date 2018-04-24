@@ -43,23 +43,5 @@
     "color": "#ffffe6",
     "titleColor": "#292e2a",
     "position": 3
-  },
-  {
-    "id": 6,
-    "title": "Dojos",
-    "url": "https://wildcodeschoolparis.github.io/dojos/",
-    "icon": "img/icon-dojos.png",
-    "color": "#F3F3F3",
-    "titleColor": "#292e2a",
-    "position": 6
-  },
-  {
-    "id": 7,
-    "title": "COCOCO",
-    "url": "http://google.com",
-    "icon": "img/icon-livecodings.png",
-    "color": "#FFFF57",
-    "titleColor": "#292e2a",
-    "position": 7
   }
 ]

@@ -1,5 +1,4 @@
 import { displayModal } from './modal-display.js'
-import { resetSelectIcon, resetSelectColor } from './modal-processing.js'
 
 const editLink = document.getElementsByClassName('link-edit-module')
 
@@ -30,10 +29,6 @@ const moyenColor = (arrayRgb) => {
 const rgbToArray = (rgb) => rgb.match(/([0-9]+)/g)
 
 export const fillFormEdit = (data) => {
-    //reset opacity of button icon
-    resetSelectIcon()
-    // reset border of button color
-    resetSelectColor()
 
     document.getElementById('new-module-form-title').value = data.getElementsByClassName('title-module')[0].innerHTML
     document.getElementById('new-module-form-url').value = data.getElementsByClassName('link-url')[0].href
@@ -51,10 +46,4 @@ export const fillFormEdit = (data) => {
     document.getElementById('new-module-form-color').value = colorModule.slice(1)
     
     document.getElementsByName(colorModule.slice(1))[0].children[0].style.border = '3px solid #b3b3b3'
-
-    // convert submit => update
-    const holdIdSubmit = document.getElementById('new-module-form-submit-button')
-    holdIdSubmit.value = 'Update(1)'
-    holdIdSubmit.disabled = false
-    holdIdSubmit.id = 'new-module-form-update-button'
 }
