@@ -1,6 +1,19 @@
-import { displayModal } from './modal-display.js'
+import { displayModal, hideModal } from './modal-display.js'
+import { formUpdateButtonElement } from './modal-processing.js'
 
 const editLink = document.getElementsByClassName('link-edit-module')
+
+const doubleClickUpdate = (evt) => {
+    if (evt.target.value === 'UPDATE(1)') {
+        evt.preventDefault()
+        evt.target.value = 'UPDATE(0)'
+        return
+    } 
+    hideModal()
+    evt.target.value = 'UPDATE(1)'
+}
+
+formUpdateButtonElement.addEventListener('click', doubleClickUpdate)
 
 export const evtLinkEdit = () => {
     Array.from(editLink).forEach(e => {
@@ -39,11 +52,9 @@ export const fillFormEdit = (data) => {
     // value in input COLOR
     const arrRgb = rgbToArray(data.style.backgroundColor)
     
-    
     const colorModule = moyenColor(arrRgb) > 155 ?
     `${rgbToHex(arrRgb)}-b` : `${rgbToHex(arrRgb)}-w`
     
     document.getElementById('new-module-form-color').value = colorModule.slice(1)
-    
     document.getElementsByName(colorModule.slice(1))[0].children[0].style.border = '3px solid #b3b3b3'
 }
