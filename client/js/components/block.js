@@ -1,22 +1,22 @@
 const createAdminEditionHeader = block => `
   <div class="edit-delete">
-    <p class="edit-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Edit</a></p>
+    <p class="edit-button"><a href="#" class="link-edit-module" style="color:${block.titleColor}; text-decoration:none">Edit</a></p>
     <span class="separator" style="color:${block.titleColor}; text-decoration:none">|</span>
-    <p class="delete-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Delete</a></p>
+    <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}; text-decoration:none">Delete</a></p>
   </div>
 `
 
 export const createBlockElement = block => `
 	<div class="block" style="background-color:${block.color}">
 	  ${document.isAdmin ? createAdminEditionHeader(block) : ''}
-    <a href="${block.url}" target="_blank">
+    <a class="link-url" href="${block.url}" target="_blank">
       <div class="block-icon">
         <img class="icon" src="${block.icon}"></p>
       </div>
     </a>
     <a href="${block.url}" target="_blank" style="text-decoration:none">
       <div class="block-title">
-        <p style="color: ${block.titleColor}">${block.title}</p>
+        <p class="title-module" style="color: ${block.titleColor}">${block.title}</p>
       </div>
     </a>
 	</div>

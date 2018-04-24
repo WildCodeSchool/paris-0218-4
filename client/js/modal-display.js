@@ -1,15 +1,19 @@
+import { fillFormEdit } from './admin-processing.js'
+
 const modal = document.getElementById('new-module-form-container')
 
 // display modal
 export const setup = () => {
   if (document.isAdmin) {
     const plusBlock = document.getElementById('block-plus')
-    plusBlock.addEventListener('click', displayModal)
+    plusBlock.addEventListener('click', () => displayModal())
   }
 }
 
-export const displayModal = () => {
+export const displayModal = (data) => {
   modal.style.display = 'block'
+  // form pré-remplit
+  if (data) { fillFormEdit(data) }
 }
 
 export const hideModal = () => {

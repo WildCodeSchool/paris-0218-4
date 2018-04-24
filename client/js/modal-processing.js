@@ -1,7 +1,9 @@
 import { createBlockElement, createPlusBlockElement } from './components/block.js'
 import { displayModal, hideModal, setup } from './modal-display.js'
+import { evtLinkEdit } from './admin-processing.js'
 
 const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
+const formUpdateButtonElement = document.getElementById('new-module-form-update-button')
 const blocksContainer = document.getElementById('blocks')
 export const formElement = document.getElementById('new-module-form')
 
@@ -38,6 +40,8 @@ export const render = blocks => {
   }
   blocksContainer.innerHTML = blockElements.join('')
   setup()
+  // button edit => event
+  evtLinkEdit()
 }
 
 // when submit => prepare body, reset input,
@@ -49,6 +53,12 @@ export const handleSubmit = event => {
     icon: document.getElementById('new-module-form-icon').value,
     color: document.getElementById('new-module-form-color').value
   }
+  
+  if (formSubmitButtonElement.value === 'Update(1)') {
+    console.log("j'attends une fonction update !")
+    return
+  }
+
   sendNewModule(module)
   .then(blocks => {
     formElement.reset()
@@ -70,12 +80,12 @@ const check = () => {
   const btnSubmit = document.getElementById('new-module-form-submit-button')
   btnSubmit.disabled = icon && color && (title + url === 2) ? false : true
 }
-const resetSelectIcon = () => {
+export const resetSelectIcon = () => {
   Array.from(document.getElementsByClassName('btn-select-icon')).forEach(e => {
     e.style.opacity = '0.5'
   })
 }
-const resetSelectColor = () => {
+export const resetSelectColor = () => {
   Array.from(document.getElementsByClassName('chooseColor')).forEach(e => {
     e.style.border = '1px solid silver'
   })
