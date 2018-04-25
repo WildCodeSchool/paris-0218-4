@@ -21,7 +21,6 @@
 <body>
 
 	<div class="header">
-
 		<h1>Wild Source</h1>
 	</div>
 
@@ -71,19 +70,19 @@
 				<div class="select">
 					<label for="new-module-form-icon">Select Icon :</label>
 					<input id="new-module-form-icon" type="hidden" name="icon" required>
-					<button class="btn-select-icon" type="button" name="cours">
+					<button id="btn-cours" class="btn-select-icon" type="button" name="cours">
 						<img class="icon-choice" src="./img/icon-cours.png">
 					</button>
-					<button class="btn-select-icon" type="button" name="livecodings">
+					<button id="btn-livecodings" class="btn-select-icon" type="button" name="livecodings">
 						<img class="icon-choice" src="./img/icon-livecodings.png">
 					</button>
-					<button class="btn-select-icon" type="button" name="dojos">
+					<button id="btn-dojos" class="btn-select-icon" type="button" name="dojos">
 						<img class="icon-choice" src="./img/icon-dojos.png">
 					</button>
-					<button class="btn-select-icon" type="button" name="projects">
+					<button id="btn-projects" class="btn-select-icon" type="button" name="projects">
 						<img class="icon-choice" src="./img/icon-projects.png">
 					</button>
-					<button class="btn-select-icon" type="button" name="groups">
+					<button id="btn-groups" class="btn-select-icon" type="button" name="groups">
 						<img class="icon-choice" src="./img/icon-groups.png">
 					</button>
 				</div>
@@ -91,26 +90,27 @@
 				<div class="select">
 					<label for="new-module-form-color">Select Color :</label>
 					<input id="new-module-form-color" type="hidden" name="color" required>
-					<button class="btn-select-color" type="button" name="342A66-w">
+					<button name="342A66-w" class="btn-select-color" type="button">
 						<p class="chooseColor" style="background-color:#342A66"></p>
 					</button>
-					<button class="btn-select-color" type="button" name="FFFFE6-b">
+					<button name="FFFFE6-b" class="btn-select-color" type="button">
 						<p class="chooseColor" style="background-color:#FFFFE6"></p>
 					</button>
-					<button class="btn-select-color" type="button" name="343936-w">
+					<button name="343936-w" class="btn-select-color" type="button">
 						<p class="chooseColor" style="background-color:#343936"></p>
 					</button>
-					<button class="btn-select-color" type="button" name="F3F3F3-b">
+					<button name="F3F3F3-b" class="btn-select-color" type="button">
 						<p class="chooseColor" style="background-color:#F3F3F3"></p>
 					</button>
-					<button class="btn-select-color" type="button" name="FFFF57-b">
+					<button name="FFFF57-b" class="btn-select-color" type="button">
 						<p class="chooseColor" style="background-color:#FFFF57"></p>
 					</button>
 				</div>
 
 				<div id="endForm" class="">
 					<input id="new-module-form-cancel-button" class="button-cancel" type="reset" value="Cancel">
-					<input id="new-module-form-submit-button" class="btn-submit" type="submit" value="Submit" disabled>
+					<input id="new-module-form-submit-button" class="btn-submit" type="submit" value="SUBMIT" disabled>
+					<input id="new-module-form-update-button" class="btn-submit" type="hidden" value="UPDATE(1)">
 				</div>
 			</fieldset>
 		</form>
