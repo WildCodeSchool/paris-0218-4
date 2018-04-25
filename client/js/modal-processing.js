@@ -21,8 +21,8 @@ const handleSuccess = () => {
 const handleFailure = err => { console.log(err) }
 
 // fetch module on post => return update json
-const sendNewModule = module => {
-  return fetch('http://localhost:3030/blocks', {
+const sendNewModule = (module, blockState) => {
+  return fetch(`http://localhost:3030/${blockState}`, {
     method: 'post',
     body: JSON.stringify(module)
   })
@@ -48,18 +48,17 @@ export const render = blocks => {
 export const handleSubmit = event => {
   event.preventDefault()
   const module = {
+    id: document.getElementById('new-module-form-id').value,
     title: document.getElementById('new-module-form-title').value,
     url: document.getElementById('new-module-form-url').value,
     icon: document.getElementById('new-module-form-icon').value,
     color: document.getElementById('new-module-form-color').value
   }
-  
-  if (formUpdateButtonElement.type === 'submit') {
-    console.log("j'attends une fonction update !")
-    return
-  }
 
-  sendNewModule(module)
+  const blockState = formUpdateButtonElement.type === 'submit' ? 
+  "update-blocks" : "blocks"
+  console.log(blockState)
+  sendNewModule(module, blockState)
   .then(blocks => {
     formElement.reset()
     // hideModal() // if you want hidde form after submit

@@ -42,7 +42,9 @@ const moyenColor = (arrayRgb) => {
 const rgbToArray = (rgb) => rgb.match(/([0-9]+)/g)
 
 export const fillFormEdit = (data) => {
-
+    
+    console.log(data)
+    
     document.getElementById('new-module-form-title').value = data.getElementsByClassName('title-module')[0].innerHTML
     document.getElementById('new-module-form-url').value = data.getElementsByClassName('link-url')[0].href
     // value in input ICON
@@ -51,10 +53,14 @@ export const fillFormEdit = (data) => {
     document.getElementById(`btn-${valueIcon}`).style.opacity = '1'
     // value in input COLOR
     const arrRgb = rgbToArray(data.style.backgroundColor)
-    
     const colorModule = moyenColor(arrRgb) > 155 ?
+
     `${rgbToHex(arrRgb)}-b` : `${rgbToHex(arrRgb)}-w`
     
     document.getElementById('new-module-form-color').value = colorModule.slice(1)
     document.getElementsByName(colorModule.slice(1))[0].children[0].style.border = '3px solid #b3b3b3'
+
+    // put value modul in input
+    const idBlock = data.id.split("-")[1]
+    document.getElementById('new-module-form-id').value = idBlock
 }
