@@ -1,6 +1,6 @@
 import { createBlockElement, createPlusBlockElement } from './components/block.js'
 import { displayModal, hideModal, setup } from './modal-display.js'
-import { evtLinkEdit } from './admin-processing.js'
+import { evtLinkEdit, evtLinkDelete, evtConfirmDelete } from './admin-processing.js'
 
 export const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
 export const formUpdateButtonElement = document.getElementById('new-module-form-update-button')
@@ -18,7 +18,7 @@ const handleSuccess = () => {
 }
 
 // if error on submit form
-const handleFailure = err => { console.log(err) }
+export const handleFailure = err => { console.log(err) }
 
 // fetch module on post => return update json
 const sendNewModule = (module, blockState) => {
@@ -40,8 +40,13 @@ export const render = blocks => {
   }
   blocksContainer.innerHTML = blockElements.join('')
   setup()
-  // button edit => event
+
+  // button edit => event click
   evtLinkEdit()
+  // button delete => event click
+  evtLinkDelete()
+  // button confirm delete => event click
+  evtConfirmDelete()
 }
 
 // when submit => prepare body, reset input,
@@ -57,7 +62,6 @@ export const handleSubmit = event => {
 
   const blockState = formUpdateButtonElement.type === 'submit' ? 
   "update-blocks" : "blocks"
-  console.log(blockState)
   sendNewModule(module, blockState)
   .then(blocks => {
     formElement.reset()
