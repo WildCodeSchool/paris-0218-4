@@ -5,7 +5,7 @@ const createAdminEditionHeader = block => `
     <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}">Delete</a></p>
   </div>
   <div class="edit-delete" style="display:none">
-    <p><a class="confirm-deletion" style="color:${block.titleColor}">confirm the deletion</a></p>
+    <p class="confirm-deletion"><a style="color:${block.titleColor}">Click again to confirm deletion</a></p>
   </div>
 `
 
