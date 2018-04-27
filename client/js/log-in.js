@@ -19,5 +19,8 @@ logInForm.addEventListener('submit', e => {
 		'credentials': 'include',
 		body: JSON.stringify(form)
 	})
-	.then(res => res.json())
+	.then(res => {
+		res.json() 
+		window.location = '/homepage.html'
+	})
 })
