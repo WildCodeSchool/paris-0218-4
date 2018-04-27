@@ -53,25 +53,19 @@ app.post('/log-in', (req, res, next) => {
   const user = users.find(u => req.body.username === u.username)
 
   if (!user) {
-    console.log('user wrong')
-    return res.json({ error: 'User not found' })
+    console.log('user wrong 1')
+    throw Error('User not found')
   }
 
   if (user.password !== req.body.password) {
-    console.log('user wrong')
-    return res.json({ error: 'Wrong password' })
+    console.log('user wrong 2')
+    throw Error('Wrong password')
   }
 
   req.session.user = user
 
   res.json(user)
   console.log(user, 'user trouvé')
-  // res.redirect('/homepage.html')
-
-
-  // .then(result => {
-  // window.location = '/homepage.html'
-  // })
 
 })
 
@@ -100,6 +94,7 @@ app.use((request, response, next) => {
     }
   })
 })
+
 //==============RSS ROUTE==============//
 app.use('/route-rss', require(path.join(__dirname, './route/route-rss.js')))
 //============================//
