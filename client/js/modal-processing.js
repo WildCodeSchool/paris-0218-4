@@ -1,6 +1,6 @@
 import { createBlockElement, createPlusBlockElement } from './components/block.js'
 import { displayModal, hideModal, setup } from './modal-display.js'
-import { evtLinkEdit } from './admin-processing.js'
+import { evtLinkEdit, evtLinkDelete, evtConfirmDelete } from './admin-processing.js'
 
 export const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
 export const formUpdateButtonElement = document.getElementById('new-module-form-update-button')
@@ -18,11 +18,11 @@ const handleSuccess = () => {
 }
 
 // if error on submit form
-const handleFailure = err => { console.log(err) }
+export const handleFailure = err => { console.log(err) }
 
 // fetch module on post => return update json
-const sendNewModule = module => {
-  return fetch('http://localhost:3030/blocks', {
+const sendNewModule = (module, blockState) => {
+  return fetch(`http://localhost:3030/${blockState}`, {
     method: 'post',
     body: JSON.stringify(module)
   })
@@ -40,26 +40,29 @@ export const render = blocks => {
   }
   blocksContainer.innerHTML = blockElements.join('')
   setup()
-  // button edit => event
+
+  // button edit => event click
   evtLinkEdit()
+  // button delete => event click
+  evtLinkDelete()
+  // button confirm delete => event click
+  evtConfirmDelete()
 }
 
 // when submit => prepare body, reset input,
 export const handleSubmit = event => {
   event.preventDefault()
   const module = {
+    id: document.getElementById('new-module-form-id').value,
     title: document.getElementById('new-module-form-title').value,
     url: document.getElementById('new-module-form-url').value,
     icon: document.getElementById('new-module-form-icon').value,
     color: document.getElementById('new-module-form-color').value
   }
-  
-  if (formUpdateButtonElement.type === 'submit') {
-    console.log("j'attends une fonction update !")
-    return
-  }
 
-  sendNewModule(module)
+  const blockState = formUpdateButtonElement.type === 'submit' ? 
+  "update-blocks" : "blocks"
+  sendNewModule(module, blockState)
   .then(blocks => {
     formElement.reset()
     // hideModal() // if you want hidde form after submit

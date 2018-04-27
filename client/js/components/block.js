@@ -1,8 +1,11 @@
 const createAdminEditionHeader = block => `
   <div class="edit-delete">
-    <p class="edit-button"><a href="#" class="link-edit-module" style="color:${block.titleColor}; text-decoration:none">Edit</a></p>
-    <span class="separator" style="color:${block.titleColor}; text-decoration:none">|</span>
-    <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}; text-decoration:none">Delete</a></p>
+    <p class="edit-button"><a class="link-edit-module" style="color:${block.titleColor}">Edit</a></p>
+    <span class="separator" style="color:${block.titleColor}">|</span>
+    <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}">Delete</a></p>
+  </div>
+  <div class="edit-delete" style="display:none">
+    <p><a class="confirm-deletion" style="color:${block.titleColor}">confirm the deletion</a></p>
   </div>
 `
 
