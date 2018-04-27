@@ -1,24 +1,29 @@
 const createAdminEditionHeader = block => `
   <div class="edit-delete">
-    <p class="edit-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Edit</a></p>
-    <span class="separator" style="color:${block.titleColor}; text-decoration:none">|</span>
-    <p class="delete-button"><a href="" style="color:${block.titleColor}; text-decoration:none">Delete</a></p>
+    <p class="edit-button"><a class="link-edit-module" style="color:${block.titleColor}">Edit</a></p>
+    <span class="separator" style="color:${block.titleColor}">|</span>
+    <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}">Delete</a></p>
+  </div>
+  <div class="edit-delete" style="display:none">
+    <p><a class="confirm-deletion" style="color:${block.titleColor}">confirm the deletion</a></p>
   </div>
 `
 
 export const createBlockElement = block => `
-	<div class="block" style="background-color:${block.color}">
-	  ${document.isAdmin ? createAdminEditionHeader(block) : ''}
-    <a href="${block.url}" target="_blank">
-      <div class="block-icon">
-        <img class="icon" src="${block.icon}"></p>
-      </div>
-    </a>
-    <a href="${block.url}" target="_blank" style="text-decoration:none">
-      <div class="block-title">
-        <p style="color: ${block.titleColor}">${block.title}</p>
-      </div>
-    </a>
+	<div id="module-${block.id}" class="block" style="background-color:${block.color}">
+    ${document.isAdmin ? createAdminEditionHeader(block) : ''}
+    <div class="block-title-icon">
+      <a class="link-url" href="${block.url}" target="_blank"y>
+        <div class="block-icon">
+          <img class="icon" src="${block.icon}"></p>
+        </div>
+      </a>
+      <a href="${block.url}" target="_blank" style="text-decoration:none">
+        <div class="block-title">
+          <p class="title-module" style="color: ${block.titleColor}">${block.title}</p>
+        </div>
+      </a>
+    </div>
 	</div>
 `
 
@@ -28,3 +33,5 @@ export const createPlusBlockElement = () => `
 	  <p class="add-new-module">Add a new module</p>
 	</div>
 `
+
+// ======================== RENDER CSS =====================

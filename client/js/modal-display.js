@@ -1,15 +1,53 @@
+import { fillFormEdit } from './admin-processing.js'
+import { resetSelectIcon, resetSelectColor, formSubmitButtonElement, formUpdateButtonElement } from './modal-processing.js'
+
 const modal = document.getElementById('new-module-form-container')
 
+// // CHANGE LANDSCAPE / PORTRAIT
+// const resizeFormat = () => {
+//   if (window.innerHeight > window.innerWidth) {
+//     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+//     }
+//   }
+//   else {
+
+//   }
+// }
 // display modal
 export const setup = () => {
   if (document.isAdmin) {
     const plusBlock = document.getElementById('block-plus')
-    plusBlock.addEventListener('click', displayModal)
+    plusBlock.addEventListener('click', () => displayModal())
+  } else {
+    const blockTitleIcon = document.getElementsByClassName('block-title-icon')
+    Array.from(blockTitleIcon).forEach(e => {
+      e.style.paddingTop = "3%"
+      e.style.marginTop = "3%"
+    })
   }
 }
 
-export const displayModal = () => {
+export const SubmitToUpdateAndReverse = (btn1, btn2) => {
+  btn1.type = 'hidden'
+  btn2.type = 'submit'
+}
+
+export const displayModal = (data) => {
   modal.style.display = 'block'
+  
+  //reset opacity of button icon
+  resetSelectIcon()
+  // reset border of button color
+  resetSelectColor()
+
+  if (data) {
+    // change btn submit
+    SubmitToUpdateAndReverse(formSubmitButtonElement, formUpdateButtonElement)
+    // call form edit
+    fillFormEdit(data)
+    return
+  }
+  SubmitToUpdateAndReverse(formUpdateButtonElement, formSubmitButtonElement)
 }
 
 export const hideModal = () => {
