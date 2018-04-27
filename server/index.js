@@ -2,7 +2,8 @@
 const express = require('express')
 const fs = require('fs')
 const util = require('util')                             //  Filesystem
-const path = require('path')                             //  Util. pour les chemins d'accès
+const path = require('path')                            //  Util. pour les chemins d'accès
+
 const app = express()
 const readFile = util.promisify(fs.readFile)
 const writeFile = util.promisify(fs.writeFile)
@@ -31,7 +32,9 @@ app.use((request, response, next) => {
     }
   })
 })
-
+//==============RSS ROUTE==============//
+app.use('/route-rss', require(path.join(__dirname, './route/route-rss.js')))
+//============================//
 app.listen(port, () => console.log(`server listenning to port ${port}`))
 
 const filePath = path.join(__dirname, '../mocks/blocks/blocks.json')  // FILEPATH

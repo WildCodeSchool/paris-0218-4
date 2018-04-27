@@ -1,4 +1,5 @@
 import { handleSubmit, render, formElement } from './modal-processing.js'
+import { getRss } from './rss-get.js'
 
 // simule admin behavior
 const qs = new URLSearchParams(window.location.search)
@@ -16,3 +17,5 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 // when submit form
 formElement.addEventListener('submit', handleSubmit)
+
+getRss()

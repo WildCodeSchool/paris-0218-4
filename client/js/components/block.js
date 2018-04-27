@@ -11,17 +11,19 @@ const createAdminEditionHeader = block => `
 
 export const createBlockElement = block => `
 	<div id="module-${block.id}" class="block" style="background-color:${block.color}">
-	  ${document.isAdmin ? createAdminEditionHeader(block) : ''}
-    <a class="link-url" href="${block.url}" target="_blank">
-      <div class="block-icon">
-        <img class="icon" src="${block.icon}"></p>
-      </div>
-    </a>
-    <a href="${block.url}" target="_blank" style="text-decoration:none">
-      <div class="block-title">
-        <p class="title-module" style="color: ${block.titleColor}">${block.title}</p>
-      </div>
-    </a>
+    ${document.isAdmin ? createAdminEditionHeader(block) : ''}
+    <div class="block-title-icon">
+      <a class="link-url" href="${block.url}" target="_blank"y>
+        <div class="block-icon">
+          <img class="icon" src="${block.icon}"></p>
+        </div>
+      </a>
+      <a href="${block.url}" target="_blank" style="text-decoration:none">
+        <div class="block-title">
+          <p class="title-module" style="color: ${block.titleColor}">${block.title}</p>
+        </div>
+      </a>
+    </div>
 	</div>
 `
 
@@ -31,3 +33,5 @@ export const createPlusBlockElement = () => `
 	  <p class="add-new-module">Add a new module</p>
 	</div>
 `
+
+// ======================== RENDER CSS =====================

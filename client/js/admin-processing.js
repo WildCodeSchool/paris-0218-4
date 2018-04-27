@@ -67,10 +67,8 @@ export const evtLinkDelete = () => {
             const blocksEditDelete = module.getElementsByClassName('edit-delete')[0]
             const blocksConfimDelete = module.getElementsByClassName('edit-delete')[1]
 
-            blocksEditDelete.style.display = 'none'
-            blocksConfimDelete.style.display = 'flex'
-
-            setTimeout(() => noneFlexReverse(blocksEditDelete, blocksConfimDelete), 3000)
+            noneFlexReverse(blocksConfimDelete, blocksEditDelete)
+            setTimeout(() => noneFlexReverse(blocksEditDelete, blocksConfimDelete), 5000)
         })
     })
 }

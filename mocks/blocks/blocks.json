@@ -19,11 +19,38 @@
   },
   {
     "id": 2,
+    "title": "POKEMON",
+    "icon": "img/icon-dojos.png",
+    "url": "https://wildcodeschoolparis.github.io/dojos/",
+    "color": "#F3F3F3",
+    "titleColor": "#292e2a",
+    "position": 4
+  },
+  {
+    "id": 3,
+    "title": "Dojos",
+    "icon": "img/icon-livecodings-blanc.png",
+    "url": "https://wildcodeschoolparis.github.io/dojos/",
+    "color": "#343936",
+    "titleColor": "white",
+    "position": 5
+  },
+  {
+    "id": 4,
     "title": "Projects",
     "icon": "img/icon-projects.png",
     "url": "https://wildcodeschoolparis.github.io/projects/",
     "color": "#ffffe6",
     "titleColor": "#292e2a",
     "position": 3
+  },
+  {
+    "id": 5,
+    "title": "sdvsd",
+    "url": "http://test.com",
+    "icon": "img/icon-livecodings.png",
+    "color": "#F3F3F3",
+    "titleColor": "#292e2a",
+    "position": 6
   }
 ]

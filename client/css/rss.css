@@ -1,0 +1,55 @@
+/* SECTION PERSONAL + FLUX */
+.section-flux {
+    width: 24vw;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    top: 60px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3)
+  }
+    
+  /* FLUX RSS */
+.flux-rss {
+    background-color: white;
+    height: 100vh;
+    text-align: left;
+}
+.loading-rss {
+    margin-top: 25%;
+    text-align: center;
+}
+.block-rss {
+    margin: 5px;
+}
+.link-rss {
+    color: black;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 200;
+    padding: 5px 10px;
+    border-bottom: 1px solid #F1F1F1;
+    border-inline-end-width: 5px;
+}
+.link-rss a {
+    color: black;
+}
+.link-rss a:hover {
+    color: blueviolet;
+    font: bold;
+}
+
+  /* PERSONAL DETAILS */
+  .personal {
+    background-color: yellow;
+  }
+  p.username {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 30px;
+  }
+  p.edit-admin {
+    padding-top: 5px;
+    padding-bottom: 30px;
+  }

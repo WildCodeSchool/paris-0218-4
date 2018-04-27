@@ -47,6 +47,7 @@ export const render = blocks => {
   evtLinkDelete()
   // button confirm delete => event click
   evtConfirmDelete()
+
 }
 
 // when submit => prepare body, reset input,
