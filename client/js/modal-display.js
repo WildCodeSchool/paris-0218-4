@@ -18,14 +18,16 @@ export const SubmitToUpdateAndReverse = (btn1, btn2) => {
 
 export const displayModal = (data) => {
   modal.style.display = 'block'
-  // form pré-remplit
+  
   //reset opacity of button icon
   resetSelectIcon()
   // reset border of button color
   resetSelectColor()
+
   if (data) {
     // change btn submit
     SubmitToUpdateAndReverse(formSubmitButtonElement, formUpdateButtonElement)
+    // call form edit
     fillFormEdit(data)
     return
   }

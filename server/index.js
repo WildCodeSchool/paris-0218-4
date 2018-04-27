@@ -14,7 +14,6 @@ app.use((request, response, next) => {
   response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next()
 })
-
 //==============ACCU==============//
 app.use((request, response, next) => {
   if (request.method === 'GET') return next()
@@ -23,7 +22,6 @@ app.use((request, response, next) => {
   request.on('data', data => {
     accumulator += data
   })
-
   request.on('end', () => {
     try {
       request.body = JSON.parse(accumulator)
@@ -37,12 +35,6 @@ app.use((request, response, next) => {
 app.listen(port, () => console.log(`server listenning to port ${port}`))
 
 const filePath = path.join(__dirname, '../mocks/blocks/blocks.json')  // FILEPATH
-
-//==============HOME==============//
-app.get('/', (request, response) => {
-  response.send('OKokayyyyyyyyye')
-  response.json(JSON.parse(data))
-} )
 
 //==============GET BLOCKS==============//
 app.get('/blocks', (request, response, next) => {
@@ -62,7 +54,7 @@ app.post('/blocks', (request, response, next) => {
     .then(async blocks => {
 
       blocks.push({
-        id: blocks.length + 1,
+        id: blocks.length,
         title: request.body.title,
         url: request.body.url,
         icon: request.body.color.split('-')[1] === "b" ?
@@ -72,6 +64,53 @@ app.post('/blocks', (request, response, next) => {
         titleColor: request.body.color.split('-')[1] === "b" ? "#292e2a" : "white",
         position: blocks.length + 1
       })
+      const content = JSON.stringify(blocks, null, 2)
+      await writeFile(filepath, content, 'utf8')
+      response.json(blocks)
+    })
+    .catch(next)
+})
+
+//==============POST UPDATE BLOCK==============//
+app.post('/update-blocks', (request, response, next) => {
+  // id-module
+  const filepath = '../mocks/blocks/blocks.json'
+  readFile(filepath, 'utf8')
+    .then(JSON.parse)
+    .then(async blocks => {
+
+      const i = request.body.id
+      blocks[i].title = request.body.title
+      blocks[i].url = request.body.url
+      blocks[i].icon = request.body.color.split('-')[1] === "b" ?
+        `img/icon-${request.body.icon}.png` :
+        `img/icon-${request.body.icon}-blanc.png`
+      blocks[i].color = `#${request.body.color.split('-')[0]}`
+      blocks[i].titleColor = request.body.color.split('-')[1] === "b" ? "#292e2a" : "white"
+
+      const content = JSON.stringify(blocks, null, 2)
+      await writeFile(filepath, content, 'utf8')
+      response.json(blocks)
+    })
+    .catch(next)
+})
+
+//==============DELETE BLOCK==============//
+app.post('/delete-blocks', (request, response, next) => {
+  // id-module
+  const filepath = '../mocks/blocks/blocks.json'
+  readFile(filepath, 'utf8')
+    .then(JSON.parse)
+    .then(async blocks => {
+
+      const index = request.body.id
+      // delete
+      blocks.splice(index, 1)
+
+      for (let i = 0 ; i < blocks.length ; i++) {
+        blocks[i].id = i 
+      }
+
       const content = JSON.stringify(blocks, null, 2)
       await writeFile(filepath, content, 'utf8')
       response.json(blocks)
