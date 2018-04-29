@@ -7,7 +7,7 @@ document.isAdmin = qs.get('admin') === 'true'
 
 // fetch module on get
 const getModules = () => {
-  return fetch('http://localhost:3030/blocks')
+  return fetch('http://localhost:3030/route-module/blocks')
     .then(response => response.json())
 }
 

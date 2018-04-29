@@ -18,7 +18,6 @@ export const getRss = () => {
     fetch('http://localhost:3030/route-rss/get-rss')
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             sortRss(res)
         })
 }

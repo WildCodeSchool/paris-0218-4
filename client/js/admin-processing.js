@@ -21,7 +21,7 @@ const doubleClickUpdate = (evt) => {
 }
 
 const deleteData = (content) => {
-    return fetch('http://localhost:3030/delete-blocks', {
+    return fetch('http://localhost:3030/route-module/delete-blocks', {
       method: 'post',
       body: content
     })
