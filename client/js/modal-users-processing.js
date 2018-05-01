@@ -24,6 +24,7 @@ const confirmDelete = (evt) => {
 
     document.getElementById('link-confirm-delete').addEventListener('click', (evt) => {
         removeUser(evt.target.name)
+        confirm.innerHTML = ""
     })
     document.getElementById('link-cancel-delete').addEventListener('click', () => {
         confirm.innerHTML = ""
@@ -57,6 +58,7 @@ export const addUser = (evt) => {
         password: document.getElementById('new-users-form-password').value,
         admin: document.getElementById('new-users-form-admin').value,
     }
+    evt.target.reset()
     fetch('http://localhost:3030/route-users/users', {
         method: 'post',
         body: JSON.stringify(obj)
