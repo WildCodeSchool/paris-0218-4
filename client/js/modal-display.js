@@ -15,6 +15,7 @@ const modal = document.getElementById('new-module-form-container')
 // }
 // display modal
 export const setup = () => {
+  
   if (document.isAdmin) {
     const plusBlock = document.getElementById('block-plus')
     plusBlock.addEventListener('click', () => displayModal())

@@ -1,4 +1,5 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 
@@ -20,14 +21,20 @@ router.use(session({
     { username: 'Charles', password: 'hellovous', admin: 'false' }
   ]
   
+  // router.use(cookieParser())
+
   // Logger middleware
-  router.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })
-    next()
-  })
+  // router.use((req, res, next) => {
+  //   // console.log(req.headers)
+  //   console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })
+  //   next()
+  // })
   
-  router.get('/', (req, res) => {
+  router.get('/secure', (req, res) => {
+    // console.log(req.headers)
+
     const user = req.session.user || {}
+    // console.log(user)
     res.json(user)
   })
   
@@ -42,10 +49,11 @@ router.use(session({
     }
   
     req.session.user = user
-  
+    user.sessionID = req.sessionID
+    delete user.password
+
     res.json(user)
     console.log(user, 'user trouvé')
-  
   })
 
   router.use((err, req, res, next) => {

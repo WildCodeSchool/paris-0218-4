@@ -1,19 +1,20 @@
 const logInForm = document.getElementById('log-in-form')
+// export document.isSecure = 
 
 const processAuth = (res) => {
-
+	
 	const username = res.username
 	const admin = res.admin
+	const sessionID = res.sessionID
 
 	if (username !== undefined) {
-		window.location = `/homepage.html?admin=${admin}`
+		window.location = `/homepage.html?admin=${admin}&chkID=${sessionID}`
 	}
 	else console.log(res)
 }
 
 logInForm.addEventListener('submit', e => {
 	e.preventDefault()
-	console.log("login")
 	
 	const username = document.getElementById('username')
 	const password = document.getElementById('password')

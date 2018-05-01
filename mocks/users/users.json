@@ -1,0 +1,13 @@
+[
+	{
+		"username": "COCO",
+		"password": "COCO",
+		"admin": "true"
+	},
+	
+	{
+		"username": "test",
+		"password": "test",
+		"admin": "false"
+	}
+]

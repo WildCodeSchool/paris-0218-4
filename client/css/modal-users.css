@@ -1,0 +1,66 @@
+#btn-status-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    float: right;
+
+    border: 1px solid silver;
+    padding: 2px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    height: 25px;
+    width: 40px;
+}
+
+#selector-status-admin {
+    border-radius: 20px;
+    min-height: 21px;
+    max-width: 21px;
+    background-color: rgb(41, 46, 42);
+    transition: all, 0.5s;
+}
+
+#users-list {
+    margin-top: 1.1em;
+}
+#users-list td {
+    border-bottom: 1px solid #ddd;
+}
+.delete-user {
+    background-color: transparent;
+    color: black;
+    padding: 0px 10px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.delete-user::before {
+    content: "\2573";
+    font-size: 20px;
+}
+/* CANCEL and SUBMIT */
+#endFormUsers {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  #endFormUsers input {
+    width: 130px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  #endFormUsers .button-cancel {
+    background-color: transparent !important;
+    border: 1px solid black !important;
+    color: black;
+    margin-right: 10px;
+  }
+  
+  #endFormUsers .btn-submit {
+    background-color: #292F2B;
+    margin-left: 10px;
+  }

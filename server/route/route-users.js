@@ -7,21 +7,26 @@ const router = express.Router()
 const readFile = util.promisify(fs.readFile)
 const writeFile = util.promisify(fs.writeFile)
 
-const filePath = path.join(__dirname, '../../mocks/blocks/blocks.json')
+const filePathUsers = path.join(__dirname, '../../mocks/users/users.json')
 
 //==============GET BLOCKS==============//
-router.get('/blocks', (request, response, next) => {
-  readFile(filePath, 'utf8')
+router.get('/users', (request, response, next) => {
+  readFile(filePathUsers, 'utf8')
   .then(data => {
     const blocks = JSON.parse(data)
+    
+    blocks.forEach(e => {
+        delete e.password
+    })
+    
     response.json(blocks)
   })
   .catch(next)
 })
 //==============POST BLOCK==============//
-router.post('/blocks', (request, response, next) => {
+router.post('/users', (request, response, next) => {
 
-  readFile(filePath, 'utf8')
+  readFile(filePathUsers, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -37,16 +42,16 @@ router.post('/blocks', (request, response, next) => {
         position: blocks.length + 1
       })
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filePath, content, 'utf8')
+      await writeFile(filePathUsers, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)
 })
 
 //==============POST UPDATE BLOCK==============//
-router.post('/update-blocks', (request, response, next) => {
+router.post('/update-users', (request, response, next) => {
 
-  readFile(filePath, 'utf8')
+  readFile(filePathUsers, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -60,16 +65,16 @@ router.post('/update-blocks', (request, response, next) => {
       blocks[i].titleColor = request.body.color.split('-')[1] === "b" ? "#292e2a" : "white"
 
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filePath, content, 'utf8')
+      await writeFile(filePathUsers, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)
 })
 
 //==============DELETE BLOCK==============//
-router.post('/delete-blocks', (request, response, next) => {
+router.post('/delete-users', (request, response, next) => {
 
-  readFile(filePath, 'utf8')
+  readFile(filePathUsers, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -82,7 +87,7 @@ router.post('/delete-blocks', (request, response, next) => {
       }
 
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filePath, content, 'utf8')
+      await writeFile(filePathUsers, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)

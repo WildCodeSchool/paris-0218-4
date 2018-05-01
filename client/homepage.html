@@ -16,6 +16,7 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/modal-users.css">
 	<link rel="stylesheet" href="css/rss.css">
 
 </head>
@@ -30,7 +31,7 @@
 	<div class="section-flux">
 		<div class="personal">
 			<p class="username">Admin 1</p>
-			<p class="current edit-admin">Edit my profile</p>
+			<p class="current edit-admin"><a id="link-manage-users" href="#">Manage Users</a></p>
 		</div>
 
 		<div id="flux-rss" class="flux-rss">
@@ -41,7 +42,7 @@
 		</div>
 	</div>
 
-	<!-- The Modal -->
+	<!-- The Modal add module -->
 	<div id="new-module-form-container" class="modal">
 		<form id="new-module-form">
 
@@ -93,7 +94,7 @@
 					</button>
 				</div>
 
-				<div id="endForm" class="">
+				<div id="Users" class="">
 					<input id="new-module-form-cancel-button" class="button-cancel" type="reset" value="Cancel">
 					<input id="new-module-form-submit-button" class="btn-submit" type="submit" value="SUBMIT" disabled>
 					<input id="new-module-form-update-button" class="btn-submit" type="hidden" value="UPDATE(1)">
@@ -102,9 +103,48 @@
 		</form>
 	</div>
 
+	<!-- The Modal Users -->
+	<div id="new-users-form-container" class="modal">
+		<form id="new-users-form">
+
+			<fieldset id="modal-content-users" class="modal-content">
+
+				<div>
+					<div id="modalTitle" class="modal-title">
+						<h4>Manage users</h4>
+					</div>
+		
+					<input id="new-users-form-username" class="input-users" name="username" type="text" placeholder="Username" minlength="5" maxlength="25" required>
+					<input id="new-users-form-password" class="input-users" name="password" type="password" placeholder="Password" minlength="8" maxlength="200" required>
+	
+					<div id="custom-checkbox">
+						<label for="">
+							Admin status : <input id="input-value-admin" name="admin" value="false" type="hidden">
+							<div id="btn-status-admin"><p id="selector-status-admin"></p></div>
+						</label>
+					</div>
+					
+					<div id="endFormUsers" class="">
+						<input id="new-users-form-cancel-button" class="button-cancel" type="reset" value="Cancel">
+						<input id="new-users-form-submit-button" class="btn-submit" type="submit" value="NEW USER" disabled>
+					</div>
+				</div>
+
+				<div id="users-list">
+					<table>
+						<tbody id="container-display-users">
+							
+						</tbody>
+					</table>
+				</div>
+
+			</fieldset>
+		</form>
+	</div>
 	<!-- SCRIPT JS -->
 
 	<script type="module" src="./js/modal-display.js"></script>
+	<script type="module" src="./js/modal-users-display.js"></script>
 	<script type="module" src="./js/app.js"></script>
 </body>
 </html>

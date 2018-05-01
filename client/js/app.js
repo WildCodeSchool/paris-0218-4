@@ -5,6 +5,18 @@ import { getRss } from './rss-get.js'
 const qs = new URLSearchParams(window.location.search)
 document.isAdmin = qs.get('admin') === 'true'
 
+fetch(`http://localhost:3030/route-session/secure`)
+.then(res => res.json())
+.then(res => {
+  if(res.username) {
+    document.isAdmin = res.admin
+  }
+  else {
+    // console.log("retour")
+    // window.location = 'index.html'
+  }
+})
+
 // fetch module on get
 const getModules = () => {
   return fetch('http://localhost:3030/route-module/blocks')
