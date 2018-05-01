@@ -23,6 +23,8 @@
 
 #users-list {
     margin-top: 1.1em;
+    max-height: 250px;
+    overflow: auto;
 }
 #users-list td {
     border-bottom: 1px solid #ddd;

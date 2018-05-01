@@ -1,13 +1,14 @@
 [
-	{
-		"username": "COCO",
-		"password": "COCO",
-		"admin": "true"
-	},
-	
-	{
-		"username": "test",
-		"password": "test",
-		"admin": "false"
-	}
+  {
+    "id": 0,
+    "username": "Pokemon",
+    "password": "apoeoretit",
+    "admin": "true"
+  },
+  {
+    "id": 1,
+    "username": "Marie",
+    "password": "azertyui",
+    "admin": "true"
+  }
 ]

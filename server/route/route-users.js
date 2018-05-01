@@ -26,47 +26,20 @@ router.get('/users', (request, response, next) => {
 //==============POST BLOCK==============//
 router.post('/users', (request, response, next) => {
 
+    console.log(request.body)
   readFile(filePathUsers, 'utf8')
     .then(JSON.parse)
-    .then(async blocks => {
-
-      blocks.push({
-        id: blocks.length,
-        title: request.body.title,
-        url: request.body.url,
-        icon: request.body.color.split('-')[1] === "b" ?
-        `img/icon-${request.body.icon}.png` :
-        `img/icon-${request.body.icon}-blanc.png`,
-        color: `#${request.body.color.split('-')[0]}`,
-        titleColor: request.body.color.split('-')[1] === "b" ? "#292e2a" : "white",
-        position: blocks.length + 1
+    .then(async users => {
+        users.push({
+        id: users.length,
+        username: request.body.username,
+        password: request.body.password,
+        admin: request.body.admin,
       })
-      const content = JSON.stringify(blocks, null, 2)
+      
+      const content = JSON.stringify(users, null, 2)
       await writeFile(filePathUsers, content, 'utf8')
-      response.json(blocks)
-    })
-    .catch(next)
-})
-
-//==============POST UPDATE BLOCK==============//
-router.post('/update-users', (request, response, next) => {
-
-  readFile(filePathUsers, 'utf8')
-    .then(JSON.parse)
-    .then(async blocks => {
-
-      const i = request.body.id
-      blocks[i].title = request.body.title
-      blocks[i].url = request.body.url
-      blocks[i].icon = request.body.color.split('-')[1] === "b" ?
-        `img/icon-${request.body.icon}.png` :
-        `img/icon-${request.body.icon}-blanc.png`
-      blocks[i].color = `#${request.body.color.split('-')[0]}`
-      blocks[i].titleColor = request.body.color.split('-')[1] === "b" ? "#292e2a" : "white"
-
-      const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filePathUsers, content, 'utf8')
-      response.json(blocks)
+      response.json(users)
     })
     .catch(next)
 })
@@ -76,19 +49,19 @@ router.post('/delete-users', (request, response, next) => {
 
   readFile(filePathUsers, 'utf8')
     .then(JSON.parse)
-    .then(async blocks => {
+    .then(async users => {
 
       const index = request.body.id
       // delete
-      blocks.splice(index, 1)
+      users.splice(index, 1)
 
-      for (let i = 0 ; i < blocks.length ; i++) {
-        blocks[i].id = i 
+      for (let i = 0 ; i < users.length ; i++) {
+        users[i].id = i 
       }
 
-      const content = JSON.stringify(blocks, null, 2)
+      const content = JSON.stringify(users, null, 2)
       await writeFile(filePathUsers, content, 'utf8')
-      response.json(blocks)
+      response.json(users)
     })
     .catch(next)
 })

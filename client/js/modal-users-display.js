@@ -1,4 +1,4 @@
-import { getUsers } from './modal-users-processing.js'
+import { getUsers, addUser } from './modal-users-processing.js'
 
 const modalUsers = document.getElementById('new-users-form-container')
 
@@ -13,13 +13,17 @@ const hideModalUsers = () => {
 
 // display modal Manage Users
 document.getElementById('link-manage-users').addEventListener('click', displayModalUsers)
+
 // hide modal if cancel
 document.getElementById('new-users-form-cancel-button').addEventListener('click', hideModalUsers)
+
+// add User 
+document.getElementById('new-users-form').addEventListener('submit', addUser)
 
 // checkbox admin true or false
 document.getElementById('btn-status-admin').addEventListener('click', () => {
     const selector = document.getElementById('selector-status-admin')
-    const inputAdmin = document.getElementById('input-value-admin')
+    const inputAdmin = document.getElementById('new-users-form-admin')
     selector.style.marginLeft =  selector.style.marginLeft === '37%' ? '0%' : '37%'
     selector.style.backgroundColor =  selector.style.backgroundColor === 'rgb(0, 193, 14)' ? 'rgb(41, 46, 42)' : 'rgb(0, 193, 14)'
     inputAdmin.value = inputAdmin.value === 'true' ? 'false' : 'true'
