@@ -1,15 +1,33 @@
 import { createBlocksUsers } from './components/users.js'
 
-const removeUser = (evt) => {
-    const id = evt.target.name.split('-')[0]
-    console.log(id)
 
+const removeUser = (id) => {
     fetch('http://localhost:3030/route-users/delete-users', {
         method: 'post',
         body: JSON.stringify({id: id})
     })
     .then(res => res.json())
     .then(res => renderUsers(res))
+}
+
+const confirmDelete = (evt) => {
+    const id = evt.target.name.split('-')[0]
+    const confirm = document.getElementById('confirm-user-delete')
+
+    confirm.innerHTML = `
+    <tr>
+        <th>Comfirm remove ? </th>
+        <th><a id="link-confirm-delete" name="id">Yes</a></th>
+        <th><a id="link-cancel-delete">No</a></th>
+    </tr>
+    `
+
+    document.getElementById('link-confirm-delete').addEventListener('click', (evt) => {
+        removeUser(evt.target.name)
+    })
+    document.getElementById('link-cancel-delete').addEventListener('click', () => {
+        confirm.innerHTML = ""
+    })
 }
 
 const renderUsers = (res) => {
@@ -21,9 +39,7 @@ const renderUsers = (res) => {
     })
     // delete User
     Array.from(document.getElementsByClassName('delete-user')).forEach(e => {
-    console.log(e);
-    
-    e.addEventListener('click', removeUser)
+    e.addEventListener('click', confirmDelete)
 })
 }
 
