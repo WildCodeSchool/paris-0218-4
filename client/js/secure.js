@@ -1,3 +1,5 @@
+import { displayModalUsers } from './modal-users-display.js'
+
 const checkUser = () => {
     fetch(`http://localhost:3030/route-session/secure`, {'credentials': 'include',})
     .then(res => res.json())

@@ -1,6 +1,5 @@
 import { handleSubmit, render, formElement } from './modal-processing.js'
 import { getRss } from './rss-get.js'
-import { displayModalUsers } from './modal-users-display.js'
 
 const btnLogOut = document.getElementById('log-out-wild-source')
 
