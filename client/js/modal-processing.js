@@ -22,7 +22,7 @@ export const handleFailure = err => { console.log(err) }
 
 // fetch module on post => return update json
 const sendNewModule = (module, blockState) => {
-  return fetch(`http://localhost:3030/${blockState}`, {
+  return fetch(`http://localhost:3030/route-module/${blockState}`, {
     method: 'post',
     body: JSON.stringify(module)
   })

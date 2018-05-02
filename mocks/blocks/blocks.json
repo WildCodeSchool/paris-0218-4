@@ -37,10 +37,10 @@
   },
   {
     "id": 4,
-    "title": "Projects",
+    "title": "ProjectsAB",
     "icon": "img/icon-projects.png",
     "url": "https://wildcodeschoolparis.github.io/projects/",
-    "color": "#ffffe6",
+    "color": "#FFFFE6",
     "titleColor": "#292e2a",
     "position": 3
   },
@@ -52,5 +52,14 @@
     "color": "#F3F3F3",
     "titleColor": "#292e2a",
     "position": 6
+  },
+  {
+    "id": 6,
+    "title": "segzergg",
+    "url": "https://wildcodeschoolparis.github.io/projects/",
+    "icon": "img/icon-livecodings.png",
+    "color": "#FFFF57",
+    "titleColor": "#292e2a",
+    "position": 7
   }
 ]
