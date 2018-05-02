@@ -1,9 +1,18 @@
 import { handleSubmit, render, formElement } from './modal-processing.js'
 import { getRss } from './rss-get.js'
 
+const btnLogOut = document.getElementById('log-out-wild-source')
+
 // simule admin behavior
 const qs = new URLSearchParams(window.location.search)
 document.isAdmin = qs.get('admin') === 'true'
+
+const logOutWildSource = () => {
+  fetch('http://localhost:3030/route-session/log-out', {'credentials': 'include',})
+  .then(window.location = 'index.html')
+}
+
+btnLogOut.addEventListener('click', logOutWildSource)
 
 // fetch module on get
 const getModules = () => {
@@ -18,4 +27,12 @@ window.addEventListener("DOMContentLoaded", () => {
 // when submit form
 formElement.addEventListener('submit', handleSubmit)
 
+const sizeFluxRss = () => {
+  const blockPersonalHeight = document.getElementById('block-personal').offsetHeight
+  const headerWildSource = document.getElementById('header-wild-source').offsetHeight
+  const blockRss = document.getElementById('flux-rss')
+  blockRss.style.height = (window.innerHeight - blockPersonalHeight - headerWildSource) + "px"
+}
+
+window.onload = sizeFluxRss()
 getRss()

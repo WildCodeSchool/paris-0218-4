@@ -5,13 +5,13 @@ const createAdminEditionHeader = block => `
     <p class="delete-button"><a class="link-delete-module" style="color:${block.titleColor}">Delete</a></p>
   </div>
   <div class="edit-delete" style="display:none">
-    <p><a class="confirm-deletion" style="color:${block.titleColor}">confirm the deletion</a></p>
+    <p class="confirm-deletion"><a style="color:${block.titleColor}">Click again to confirm deletion</a></p>
   </div>
 `
 
 export const createBlockElement = block => `
 	<div id="module-${block.id}" class="block" style="background-color:${block.color}">
-    ${document.isAdmin ? createAdminEditionHeader(block) : ''}
+    ${document.isAdmin && document.isAdminSecure ? createAdminEditionHeader(block) : ''}
     <div class="block-title-icon">
       <a class="link-url" href="${block.url}" target="_blank"y>
         <div class="block-icon">

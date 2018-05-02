@@ -35,7 +35,8 @@ export const render = blocks => {
   let blockElements = blocks
     .sort((block1, block2) =>  block1.position - block2.position)
     .map(createBlockElement)
-  if (document.isAdmin) {
+    console.log(document.isAdminSecure);
+  if (document.isAdmin && document.isAdminSecure) {
     blockElements = blockElements.concat([ plusBlockElement ])
   }
   blocksContainer.innerHTML = blockElements.join('')

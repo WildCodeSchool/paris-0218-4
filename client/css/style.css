@@ -1,7 +1,19 @@
 /* GENERAL */
+::selection { 
+  background: silver; 
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+/* body {
+  filter: brightness(0); 
+} */
+
+a {
+  cursor: pointer;
 }
 
 p.current {
@@ -25,6 +37,13 @@ p {
   background-color: #292F2B;
   color: white;
   z-index: 2;
+}
+
+#log-out-wild-source {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
 }
 
 h1 {
@@ -109,7 +128,7 @@ p.edit-admin {
   text-align: left;
   padding-top: 15px;
   padding-bottom: 50px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .separator-flux {
@@ -120,7 +139,6 @@ p.edit-admin {
   margin-left: 50px;
 }
 
->>>>>>> f0228f3f913343ca8481625bb6a26ab65fb9852c
 /* ADD NEW MODULE */
 #block-plus {
   background-color: #F7F7F7;
@@ -138,16 +156,23 @@ p.edit-admin {
   justify-content: center;
   margin-top: 7%;
 }
+
+.link-edit-module, .link-delete-module, .confirm-deletion {
+  cursor: pointer;
+}
+
 .edit-button {
   width: 50%;
   text-align: right;
   padding-right: 10px;
 }
+
 .delete-button {
   width: 50%;
   text-align: left;
   padding-left: 10px;
 }
+
 .plus {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: 4.5rem;
@@ -208,6 +233,9 @@ p.edit-admin {
     text-align: right;
     padding-right: 25px;
     margin-top: 20px;
+  }
+  .confirm-deletion{
+    padding-top: 20px;
   }
   .separator {
     display: none;

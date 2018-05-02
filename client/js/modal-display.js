@@ -3,19 +3,10 @@ import { resetSelectIcon, resetSelectColor, formSubmitButtonElement, formUpdateB
 
 const modal = document.getElementById('new-module-form-container')
 
-// // CHANGE LANDSCAPE / PORTRAIT
-// const resizeFormat = () => {
-//   if (window.innerHeight > window.innerWidth) {
-//     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-//     }
-//   }
-//   else {
-
-//   }
-// }
-// display modal
 export const setup = () => {
-  if (document.isAdmin) {
+  console.log(document.isAdminSecure);
+  
+  if (document.isAdmin && document.isAdminSecure) {
     const plusBlock = document.getElementById('block-plus')
     plusBlock.addEventListener('click', () => displayModal())
   } else {

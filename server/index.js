@@ -21,6 +21,27 @@ app.use((request, response, next) => {
 //==============ROUTE==============//
 app.use('/route-rss', require(path.join(__dirname, './route/route-rss.js')))
 app.use('/route-session', require(path.join(__dirname, './route/route-session.js')))
+
+
+// ==============ACCU==============//
+app.use((request, response, next) => {
+  if (request.method !== 'POST' && request.method !== 'PUT' ) return next()
+  let accumulator = ''
+
+  request.on('data', data => {
+    accumulator += data
+  })
+  request.on('end', () => {
+    try {
+      request.body = JSON.parse(accumulator)
+      next()
+    } catch (err) {
+      next(err)
+    }
+  })
+})
+
 app.use('/route-module', require(path.join(__dirname, './route/route-module.js')))
+app.use('/route-users', require(path.join(__dirname, './route/route-users.js')))
 //============================//
 app.listen(port, () => console.log(`server listenning to port ${port}`))

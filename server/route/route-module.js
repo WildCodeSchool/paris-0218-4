@@ -7,28 +7,11 @@ const router = express.Router()
 const readFile = util.promisify(fs.readFile)
 const writeFile = util.promisify(fs.writeFile)
 
-const filePath = path.join(__dirname, '../mocks/blocks/blocks.json')
+const filePath = path.join(__dirname, '../../mocks/blocks/blocks.json')
 
-// ==============ACCU==============//
-router.use((request, response, next) => {
-  if (request.method !== 'POST' && request.method !== 'PUT' ) return next()
-  let accumulator = ''
-
-  request.on('data', data => {
-    accumulator += data
-  })
-  request.on('end', () => {
-    try {
-      request.body = JSON.parse(accumulator)
-      next()
-    } catch (err) {
-      next(err)
-    }
-  })
-})
 //==============GET BLOCKS==============//
 router.get('/blocks', (request, response, next) => {
-  readFile('../mocks/blocks/blocks.json', 'utf8')
+  readFile(filePath, 'utf8')
   .then(data => {
     const blocks = JSON.parse(data)
     response.json(blocks)
@@ -37,8 +20,8 @@ router.get('/blocks', (request, response, next) => {
 })
 //==============POST BLOCK==============//
 router.post('/blocks', (request, response, next) => {
-  const filepath = '../mocks/blocks/blocks.json'
-  readFile(filepath, 'utf8')
+
+  readFile(filePath, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -54,7 +37,7 @@ router.post('/blocks', (request, response, next) => {
         position: blocks.length + 1
       })
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filepath, content, 'utf8')
+      await writeFile(filePath, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)
@@ -62,9 +45,8 @@ router.post('/blocks', (request, response, next) => {
 
 //==============POST UPDATE BLOCK==============//
 router.post('/update-blocks', (request, response, next) => {
-  // id-module
-  const filepath = '../mocks/blocks/blocks.json'
-  readFile(filepath, 'utf8')
+
+  readFile(filePath, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -78,7 +60,7 @@ router.post('/update-blocks', (request, response, next) => {
       blocks[i].titleColor = request.body.color.split('-')[1] === "b" ? "#292e2a" : "white"
 
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filepath, content, 'utf8')
+      await writeFile(filePath, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)
@@ -86,9 +68,8 @@ router.post('/update-blocks', (request, response, next) => {
 
 //==============DELETE BLOCK==============//
 router.post('/delete-blocks', (request, response, next) => {
-  // id-module
-  const filepath = '../mocks/blocks/blocks.json'
-  readFile(filepath, 'utf8')
+
+  readFile(filePath, 'utf8')
     .then(JSON.parse)
     .then(async blocks => {
 
@@ -101,7 +82,7 @@ router.post('/delete-blocks', (request, response, next) => {
       }
 
       const content = JSON.stringify(blocks, null, 2)
-      await writeFile(filepath, content, 'utf8')
+      await writeFile(filePath, content, 'utf8')
       response.json(blocks)
     })
     .catch(next)
