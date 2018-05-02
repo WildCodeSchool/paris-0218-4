@@ -8,11 +8,10 @@
   box-shadow: 0 0 50px rgba(0,0,0,0.3)
 }
  
-
 /* FLUX RSS */
 .flux-rss {
   background-color: white;
-  height: 75vh;
+  /* height: 75vh; */
   text-align: left;
   padding: 25px 40px 25px 45px;
 }

@@ -1,22 +1,29 @@
 import { getUsers, addUser } from './modal-users-processing.js'
 
 const modalUsers = document.getElementById('new-users-form-container')
+const formUsers = document.getElementById('block-add-user')
+const linkAddUser = document.getElementById('link-add-new-user')
 
-const displayModalUsers = () => {
+export const displayModalUsers = () => {
     modalUsers.style.display = 'block'
     getUsers()
 }
 
 const hideModalUsers = () => {
     modalUsers.style.display = 'none'
+    formUsers.style.display = 'none'
+    linkAddUser.style.display = 'block'
 }
 
-// display modal Manage Users
-document.getElementById('link-manage-users').addEventListener('click', displayModalUsers)
+// diplay form in Manage Users
+document.getElementById('btn-add-user').addEventListener('click', () => {
+    linkAddUser.style.display = 'none'
+    formUsers.style.display = 'block'
+})
 
 // hide modal if cancel
 document.getElementById('new-users-form-cancel-button').addEventListener('click', hideModalUsers)
-
+document.getElementById('cancel-modal-cross').addEventListener('click', hideModalUsers)
 // add User 
 document.getElementById('new-users-form').addEventListener('submit', addUser)
 

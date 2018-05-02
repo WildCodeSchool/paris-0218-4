@@ -104,8 +104,36 @@ label input:valid + .label-text {
   transition: all 300ms;
 }
 
-.button:hover, .button:focus {
+.button:hover {
   background-color: #ffffe6;
   color: #292F2B;
   outline: 0;
+}
+
+#error-login {
+  min-height: 20px;
+  color: silver;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-weight: 200;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #292F2B inset;
+  -webkit-background-color: #292F2B !important;
+  /* transition: background-color 5000s ease-in-out 0s; */
+}
+
+::selection { 
+  background: silver; 
 }

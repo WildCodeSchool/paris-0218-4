@@ -1,38 +1,26 @@
 [
   {
     "id": 0,
-    "username": "skehbfzkhfbk",
-    "password": "ejlfbznekjbefzjk",
-    "admin": "false"
+    "username": "COCO",
+    "password": "COCO",
+    "admin": "true"
   },
   {
     "id": 1,
-    "username": "skehbfzkhfbk",
-    "password": "ejlfbznekjbefzjk",
-    "admin": "false"
+    "username": "PIKACHU",
+    "password": "erbrtbg\"lrjfh",
+    "admin": "true"
   },
   {
     "id": 2,
-    "username": "skehbfzkhfbk",
-    "password": "ejlfbznekjbefzjk",
+    "username": "DIGIMON",
+    "password": "KZERUFGHZEIUFUFGUGF",
     "admin": "true"
   },
   {
     "id": 3,
-    "username": "dfbdfb",
-    "password": "sdfbdbregrz",
+    "username": "CACACACA",
+    "password": "CACACACA",
     "admin": "false"
-  },
-  {
-    "id": 4,
-    "username": "srgezg",
-    "password": "sdzfeffsefzef",
-    "admin": "true"
-  },
-  {
-    "id": 5,
-    "username": "qqqqqqqq",
-    "password": "sgzerfgzefzefeff",
-    "admin": "true"
   }
 ]

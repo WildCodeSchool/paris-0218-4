@@ -22,16 +22,17 @@
 </head>
 <body>
 
-	<div class="header">
+	<div id="header-wild-source" class="header">
 		<h1>Wild Source</h1>
+		<span id="log-out-wild-source">Log out</span>
 	</div>
 
 	<div id="blocks" class="blocks-section"></div>
 
 	<div class="section-flux">
-		<div class="personal">
-			<p class="username">Admin 1</p>
-			<p class="current edit-admin"><a id="link-manage-users" href="#">Manage Users</a></p>
+		<div id="block-personal" class="personal">
+			<p id="session-display-name" class="username">Username</p>
+			<p id="block-link-manage-admin" class="current edit-admin"></p>
 		</div>
 
 		<div id="flux-rss" class="flux-rss">
@@ -108,12 +109,21 @@
 		<form id="new-users-form">
 
 			<fieldset id="modal-content-users" class="modal-content">
-
-				<div>
-					<div id="modalTitle" class="modal-title">
-						<h4>Manage users</h4>
-					</div>
-		
+				<p id="cancel-modal-cross"></p>
+				<div id="modalTitle" class="modal-title">
+					<h4>Manage users</h4>
+				</div>
+				<div id="link-add-new-user">
+					<table>
+						<thead>
+							<tr>
+								<th><button id="btn-add-user" class="btn-add-user" type="button"></button></th>
+								<th><span>Add a new user</span></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div id="block-add-user">
 					<input id="new-users-form-username" class="input-users" name="username" type="text" placeholder="Username" minlength="5" maxlength="25" required>
 					<input id="new-users-form-password" class="input-users" name="password" type="password" placeholder="Password" minlength="8" maxlength="200" required>
 	
@@ -146,7 +156,7 @@
 		</form>
 	</div>
 	<!-- SCRIPT JS -->
-
+	<script type="module" src="./js/secure.js"></script>
 	<script type="module" src="./js/modal-display.js"></script>
 	<script type="module" src="./js/modal-users-display.js"></script>
 	<script type="module" src="./js/app.js"></script>

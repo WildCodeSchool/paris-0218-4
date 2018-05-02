@@ -1,7 +1,19 @@
 /* GENERAL */
+::selection { 
+  background: silver; 
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+/* body {
+  filter: brightness(0); 
+} */
+
+a {
+  cursor: pointer;
 }
 
 p.current {
@@ -25,6 +37,13 @@ p {
   background-color: #292F2B;
   color: white;
   z-index: 2;
+}
+
+#log-out-wild-source {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
 }
 
 h1 {
@@ -109,7 +128,7 @@ p.edit-admin {
   text-align: left;
   padding-top: 15px;
   padding-bottom: 50px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .separator-flux {

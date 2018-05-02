@@ -8,9 +8,14 @@ const processAuth = (res) => {
 	const sessionID = res.sessionID
 
 	if (username !== undefined) {
-		window.location = `/homepage.html?admin=${admin}&chkID=${sessionID}`
+		window.location = `/homepage.html?admin=${admin}&username=${username}`
 	}
-	else console.log(res)
+	else {
+		const errorLogin = document.getElementById('error-login')
+		const logInForm = document.getElementById('log-in-form')
+		logInForm.reset()
+		errorLogin.innerHTML = res
+	}
 }
 
 logInForm.addEventListener('submit', e => {
