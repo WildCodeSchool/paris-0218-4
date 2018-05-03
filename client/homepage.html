@@ -110,15 +110,15 @@
 
 			<fieldset id="modal-content-users" class="modal-content">
 				<p id="cancel-modal-cross"></p>
-				<div id="modalTitle" class="modal-title">
+				<div id="modalTitleUsers" class="modal-title">
 					<h4>Manage users</h4>
 				</div>
 				<div id="link-add-new-user">
-					<table>
+					<table id="table-add-user">
 						<thead>
-							<tr>
-								<th><button id="btn-add-user" class="btn-add-user" type="button"></button></th>
-								<th><span>Add a new user</span></th>
+							<tr id="row-add-user">
+								<th class="button-add"><button id="btn-add-user" class="btn-add-user" type="button"></button></th>
+								<th><span class="text-add">Add a new user</span></th>
 							</tr>
 						</thead>
 					</table>
@@ -140,17 +140,19 @@
 					</div>
 				</div>
 				<div>
-					<table>
-						<thead id="confirm-user-delete"></thead>
-					</table>
+
 				</div>
 				<div id="users-list">
-					<table>
+					<table class="table-users-list">
 						<tbody id="container-display-users">
 							<!-- USERS ..  -->
 						</tbody>
 					</table>
 				</div>
+
+					<table id="table-confirm-remove-user">
+						<thead id="confirm-user-delete"></thead>
+					</table>
 
 			</fieldset>
 		</form>

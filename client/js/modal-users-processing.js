@@ -15,10 +15,10 @@ const confirmDelete = (evt) => {
     const confirm = document.getElementById('confirm-user-delete')
 
     confirm.innerHTML = `
-    <tr>
-        <th>Comfirm remove ? </th>
-        <th><a id="link-confirm-delete" name="id">Yes</a></th>
-        <th><a id="link-cancel-delete">No</a></th>
+    <tr class="confirm-remove-block">
+        <th class="confirm-remove-user">Confirm deletion ? </th>
+        <th class="no-border-bottom-th"><a id="link-confirm-delete" name="id">Yes</a></th>
+        <th class="no-border-bottom-th"><a id="link-cancel-delete">No</a></th>
     </tr>
     `
 

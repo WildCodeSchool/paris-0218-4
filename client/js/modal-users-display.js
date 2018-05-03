@@ -16,7 +16,7 @@ const hideModalUsers = () => {
 }
 
 // diplay form in Manage Users
-document.getElementById('btn-add-user').addEventListener('click', () => {
+document.getElementById('row-add-user').addEventListener('click', () => {
     linkAddUser.style.display = 'none'
     formUsers.style.display = 'block'
 })
