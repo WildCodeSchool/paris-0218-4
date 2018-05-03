@@ -1,26 +1,32 @@
 [
   {
     "id": 0,
-    "username": "DIGIMON",
-    "password": "KZERUFGHZEIUFUFGUGF",
+    "username": "LnaCharlotte",
+    "password": "wildhelena",
     "admin": "true"
   },
   {
     "id": 1,
-    "username": "CACACACA",
-    "password": "CACACACA",
-    "admin": "false"
+    "username": "COCOCOCO",
+    "password": "COCOCOCO",
+    "admin": "true"
   },
   {
     "id": 2,
-    "username": "fgrgr",
-    "password": "regergsfzrg",
+    "username": "boubou",
+    "password": "kikooolol",
     "admin": "false"
   },
   {
     "id": 3,
-    "username": "COCO",
-    "password": "COCO",
+    "username": "Marikikoo",
+    "password": "kookootoi",
     "admin": "true"
+  },
+  {
+    "id": 4,
+    "username": "Charlou",
+    "password": "hellovous",
+    "admin": "false"
   }
 ]
