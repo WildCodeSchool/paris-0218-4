@@ -18,6 +18,12 @@ app.use((request, response, next) => {
   next()
 })
 
+// Logger middleware
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`)
+  next()
+})
+
 //==============ROUTE==============//
 app.use('/route-rss', require(path.join(__dirname, './route/route-rss.js')))
 app.use('/route-session', require(path.join(__dirname, './route/route-session.js')))
