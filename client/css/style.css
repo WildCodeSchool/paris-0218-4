@@ -1,14 +1,26 @@
 /* GENERAL */
+::selection { 
+  background: silver; 
+}
+
 * {
   margin: 0;
   padding: 0;
 }
+
+/* body {
+  filter: brightness(0); 
+} */
+
+a {
+  cursor: pointer;
+}
+
 p.current {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 1.1rem;
-  text-align: center;
+  font-size: 1.15rem;
   font-weight: 200;
-  padding: 40px;
+  padding: 25px 50px 0px 50px;
 }
 
 p {
@@ -26,6 +38,16 @@ p {
   color: white;
   z-index: 2;
 }
+
+#log-out-wild-source {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 10;
+  width: 25px;
+  cursor: pointer;
+}
+
 h1 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   text-align:center;
@@ -52,6 +74,7 @@ h1 {
   text-decoration: none;
   transition: 0.4s ease-in;
 }
+
 .block:hover {
   filter: invert(100%);
   transition: 0.4s ease-out;
@@ -95,13 +118,25 @@ p.username {
 p.edit-admin {
   padding-top: 5px;
   padding-bottom: 30px;
+  text-align: center;
 }
 
 /* FLUX RSS */
 .flux-rss {
   background-color: white;
-  height: 100vh;
+  height: 75vh;
   text-align: left;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+}
+
+.separator-flux {
+  width: 17vw;
+  border-top: solid 1px #292F2B;
+  opacity: 0.5;
+  margin-top: 25px;
+  margin-left: 50px;
 }
 
 /* ADD NEW MODULE */
@@ -121,16 +156,23 @@ p.edit-admin {
   justify-content: center;
   margin-top: 7%;
 }
+
+.link-edit-module, .link-delete-module, .confirm-deletion {
+  cursor: pointer;
+}
+
 .edit-button {
   width: 50%;
   text-align: right;
   padding-right: 10px;
 }
+
 .delete-button {
   width: 50%;
   text-align: left;
   padding-left: 10px;
 }
+
 .plus {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: 4.5rem;
@@ -191,6 +233,9 @@ p.edit-admin {
     text-align: right;
     padding-right: 25px;
     margin-top: 20px;
+  }
+  .confirm-deletion{
+    padding-top: 20px;
   }
   .separator {
     display: none;
