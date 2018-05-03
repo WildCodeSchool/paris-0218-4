@@ -13,7 +13,7 @@
   background-color: white;
   /* height: 75vh; */
   text-align: left;
-  padding: 25px 40px 25px 45px;
+  padding: 25px 40px 40px 45px;
 }
 
 .loading-rss {
@@ -63,4 +63,14 @@ p.username {
 p.edit-admin {
   padding-top: 5px;
   padding-bottom: 30px;
+}
+
+#link-manage-users {
+  color: #292F2B;
+  transition: ease-in-out 0.2s;
+}
+
+#link-manage-users:hover {
+  color: blueviolet;
+  transition: ease-in-out 0.2s;
 }

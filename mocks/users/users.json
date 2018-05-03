@@ -1,26 +1,26 @@
 [
   {
     "id": 0,
-    "username": "COCO",
-    "password": "COCO",
-    "admin": "true"
-  },
-  {
-    "id": 1,
-    "username": "PIKACHU",
-    "password": "erbrtbg\"lrjfh",
-    "admin": "true"
-  },
-  {
-    "id": 2,
     "username": "DIGIMON",
     "password": "KZERUFGHZEIUFUFGUGF",
     "admin": "true"
   },
   {
-    "id": 3,
+    "id": 1,
     "username": "CACACACA",
     "password": "CACACACA",
     "admin": "false"
+  },
+  {
+    "id": 2,
+    "username": "fgrgr",
+    "password": "regergsfzrg",
+    "admin": "false"
+  },
+  {
+    "id": 3,
+    "username": "COCO",
+    "password": "COCO",
+    "admin": "true"
   }
 ]
