@@ -1,4 +1,5 @@
 import { displayModalUsers } from './modal-users-display.js'
+import { displayModal } from './modal-display.js'
 
 export function checkUser() {
     return fetch(`http://localhost:3030/route-session/secure`, {'credentials': 'include',})

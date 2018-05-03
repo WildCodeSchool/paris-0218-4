@@ -1,4 +1,5 @@
 import { displayModal, hideModal } from './modal-display.js'
+import { checkUser } from './secure.js'
 import { formUpdateButtonElement, render, handleFailure } from './modal-processing.js'
 
 const editLink = document.getElementsByClassName('link-edit-module')
@@ -47,12 +48,11 @@ export const evtConfirmDelete = () => {
             const elemt = evt.target
             const module = elemt.parentElement.parentElement.parentElement.id.split('-')[1]
             const objId = JSON.stringify({ id: module })
-            console.log(objId)
             
             deleteData(objId)
             .then(blocks => {
-                console.log(blocks)
-                render(blocks)
+                // render(blocks)
+                checkUser().then(res => render(blocks, res))
               })
               .catch(handleFailure)
         })
