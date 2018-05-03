@@ -37,7 +37,7 @@
 }
 #users-list {
     margin-top: 1.1em;
-    max-height: 250px;
+    max-height: 200px;
     overflow: auto;
 }
 .delete-user {

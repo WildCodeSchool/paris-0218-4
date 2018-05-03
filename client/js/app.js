@@ -1,5 +1,6 @@
 import { handleSubmit, render, formElement } from './modal-processing.js'
 import { getRss } from './rss-get.js'
+import { checkUser } from './secure.js'
 
 const btnLogOut = document.getElementById('log-out-wild-source')
 
@@ -22,7 +23,9 @@ const getModules = () => {
 
 // after DOM load => get module
 window.addEventListener("DOMContentLoaded", () => {
-  getModules().then(render)
+  getModules().then(blocks => {
+    checkUser().then(res => render(blocks, res))
+  })
 })
 // when submit form
 formElement.addEventListener('submit', handleSubmit)
