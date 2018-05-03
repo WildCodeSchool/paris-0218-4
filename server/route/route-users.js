@@ -52,6 +52,7 @@ router.post('/delete-users', (request, response, next) => {
     .then(async users => {
 
       const index = request.body.id
+      
       // delete
       users.splice(index, 1)
 
