@@ -1,22 +1,8 @@
 import { fillFormEdit } from './admin-processing.js'
 import { resetSelectIcon, resetSelectColor, formSubmitButtonElement, formUpdateButtonElement } from './modal-processing.js'
+import { checkUser } from './secure.js'
 
 const modal = document.getElementById('new-module-form-container')
-
-export const setup = () => {
-  console.log(document.isAdminSecure);
-  
-  if (document.isAdmin && document.isAdminSecure) {
-    const plusBlock = document.getElementById('block-plus')
-    plusBlock.addEventListener('click', () => displayModal())
-  } else {
-    const blockTitleIcon = document.getElementsByClassName('block-title-icon')
-    Array.from(blockTitleIcon).forEach(e => {
-      e.style.paddingTop = "3%"
-      e.style.marginTop = "3%"
-    })
-  }
-}
 
 export const SubmitToUpdateAndReverse = (btn1, btn2) => {
   btn1.type = 'hidden'

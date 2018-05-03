@@ -110,11 +110,18 @@ label input:valid + .label-text {
   outline: 0;
 }
 
+.button:focus {
+  outline: 0;
+}
+
 #error-login {
   min-height: 20px;
-  color: silver;
+  color: #ffff57;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 200;
+  letter-spacing: 1px;
+  transition: ease-in 0.25s;
+  font-size: 0.8rem;
 }
 
 /* Change Autocomplete styles in Chrome*/

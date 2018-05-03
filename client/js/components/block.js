@@ -9,9 +9,9 @@ const createAdminEditionHeader = block => `
   </div>
 `
 
-export const createBlockElement = block => `
+export const createBlockElement = (block, res) => `
 	<div id="module-${block.id}" class="block" style="background-color:${block.color}">
-    ${document.isAdmin && document.isAdminSecure ? createAdminEditionHeader(block) : ''}
+    ${res.admin === 'true' ? createAdminEditionHeader(block) : ''}
     <div class="block-title-icon">
       <a class="link-url" href="${block.url}" target="_blank"y>
         <div class="block-icon">

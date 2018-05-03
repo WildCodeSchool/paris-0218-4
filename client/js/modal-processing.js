@@ -1,5 +1,6 @@
 import { createBlockElement, createPlusBlockElement } from './components/block.js'
-import { displayModal, hideModal, setup } from './modal-display.js'
+import { displayModal, hideModal } from './modal-display.js'
+import { checkUser, displayLinkManager, setup } from './secure.js'
 import { evtLinkEdit, evtLinkDelete, evtConfirmDelete } from './admin-processing.js'
 
 export const formSubmitButtonElement = document.getElementById('new-module-form-submit-button')
@@ -30,25 +31,25 @@ const sendNewModule = (module, blockState) => {
 }
 
 // display module
-export const render = blocks => {
+export const render = (blocks, res) => {
   const plusBlockElement = createPlusBlockElement()
   let blockElements = blocks
     .sort((block1, block2) =>  block1.position - block2.position)
-    .map(createBlockElement)
-    console.log(document.isAdminSecure);
-  if (document.isAdmin && document.isAdminSecure) {
+    .map(e => createBlockElement(e, res))
+
+  if (res.admin === 'true') {
     blockElements = blockElements.concat([ plusBlockElement ])
   }
   blocksContainer.innerHTML = blockElements.join('')
-  setup()
 
+  checkUser().then(displayLinkManager)
+  checkUser().then(setup)
   // button edit => event click
   evtLinkEdit()
   // button delete => event click
   evtLinkDelete()
   // button confirm delete => event click
   evtConfirmDelete()
-
 }
 
 // when submit => prepare body, reset input,
@@ -69,7 +70,7 @@ export const handleSubmit = event => {
     formElement.reset()
     // hideModal() // if you want hidde form after submit
     handleSuccess()
-    render(blocks)
+    checkUser().then(res => render(blocks, res))
   })
   .catch(handleFailure)
 }
