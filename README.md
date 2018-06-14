@@ -16,3 +16,18 @@ As a group of students of the current promotion, we identified a need : improve 
 ## Timeline
 We have started the project on the 20th of March 2018.
 There will be client presentations every Friday, and the final delivery will take place on the 02nd of May 2018.
+
+## Screenshots
+Here are some screenshots of the finished site:
+
+-----------------------------------------------------------------------------------------------------------------------------
+LOGIN PAGE :
+<a href="http://fr.tinypic.com?ref=ibxapw" target="_blank"><img src="http://i63.tinypic.com/ibxapw.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+-----------------------------------------------------------------------------------------------------------------------------
+ADMIN PAGE :
+<a href="http://fr.tinypic.com?ref=24vnpll" target="_blank"><img src="http://i64.tinypic.com/24vnpll.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+-----------------------------------------------------------------------------------------------------------------------------
+USER PAGE :
+<a href="http://fr.tinypic.com?ref=2hdxjd2" target="_blank"><img src="http://i65.tinypic.com/2hdxjd2.png" border="0" alt="Image and video hosting by TinyPic"></a>
